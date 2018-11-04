@@ -5,7 +5,7 @@ etsimiseen voisi sitten käyttää A*:ia ja Djikstraa. Läpikäyntien nopeutta v
 A-star:in ja Djikstran vertailussa.  A*:in heuristiikkana käytän yksinkertaisesti euklidista pituutta, 
 sillä se on helppo laskea ja koska se ei ikinä yliarvio pituutta, mikä takaa vastauksen oikeuden.
 
-Algoritmit käyttäisivät tietorakenteita kekoa, hajautustaulua ja linkitettyä listaa. Keko 
+Käyttäisin algoritmeissa itse tehtyä kekoa, hajautustaulua ja linkitettyä listaa. Keko 
 toteutuksessani olisi vain poisto ja lisäys, täten keossa olevien pituuksien päivitys tehdään 
 lisäämällä päivitetty olio kekoon ja tarkastamalla jokaiselle keosta poistetulle arvolle, että niitä ei 
 ole poistettu aikaisemmin keosta. Tarkastukseen käytän jonkinlaista hajautustaulua. Linkitettyä 

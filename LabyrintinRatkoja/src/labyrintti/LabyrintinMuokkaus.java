@@ -6,8 +6,7 @@ import java.util.Random;
 
 public class LabyrintinMuokkaus {
     /*
-    Kruskalin algoritmista tulisi vain yksi polku alusta maaliin, tämän luokan tarkoituksena on  
-    poistaa muutama seinä labyrintistä, jotta olisi useampia mahdollisia polkuja
+    Poistaa labyrintistä muutaman seinän, jotta labyrintissä olisi hiukan enemmän erilaisia polkuja
     */
     public static Ruutu[] kaytavienLisays(Ruutu[] labyrintti, int koko) {
         Random satunnais = new Random();
@@ -21,13 +20,20 @@ public class LabyrintinMuokkaus {
                 if (viereinenRuutu != -1 && viereinenRuutu != kaytava) { 
                     labyrintti[satunnainenRivi * koko + satunnainenSarake].sivut[sivu] = kaytava;
 
-                    if (sivu == Suunnat.ylos || sivu == Suunnat.oikea) {
-                        labyrintti[viereinenRuutu].sivut[sivu + 1] = kaytava;
+                    switch(sivu) {
+                        case Suunnat.ylos: 
+                            labyrintti[viereinenRuutu].sivut[Suunnat.alas] = kaytava;
+                            break;
+                        case Suunnat.alas:
+                            labyrintti[viereinenRuutu].sivut[Suunnat.ylos] = kaytava;
+                            break;
+                        case Suunnat.vasen:
+                            labyrintti[viereinenRuutu].sivut[Suunnat.oikea] = kaytava;
+                            break;
+                        case Suunnat.oikea:
+                            labyrintti[viereinenRuutu].sivut[Suunnat.vasen] = kaytava;
+                            break;
                     }
-                    if (sivu == Suunnat.alas || sivu == Suunnat.vasen) {
-                        labyrintti[viereinenRuutu].sivut[sivu - 1] = kaytava;
-                    }
-                    break;
 
                 }
             }

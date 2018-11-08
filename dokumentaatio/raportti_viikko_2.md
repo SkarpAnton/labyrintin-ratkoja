@@ -1,5 +1,5 @@
 
-##Viikkoraportti 2
+## Viikkoraportti 2
 
 Toteutin satunnaisen labyrintin muodostamisen ja sen tulostamisen näytölle. Labyrintin muodostamiseen käytin 
 muokattua Kruskalin algoritmia, sillä se näytti olevan helpoin tapa muodostaa haluamani tapainen labyrintti. 

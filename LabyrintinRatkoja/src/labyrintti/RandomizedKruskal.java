@@ -4,7 +4,7 @@ package labyrintti;
 import java.util.Random;
 
 
-public class Kruskal {
+public class RandomizedKruskal {
     
     private static Ruutu[] labyrintti;
     private static int ruutujenMaara;

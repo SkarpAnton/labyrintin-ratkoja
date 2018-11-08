@@ -1,4 +1,4 @@
-
+    
 package labyrintti;
 
 import java.util.Random;

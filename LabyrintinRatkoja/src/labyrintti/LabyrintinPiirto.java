@@ -6,7 +6,7 @@ import java.awt.*;
 
 public class LabyrintinPiirto {
 
-    private int ruudunKoko = 10;
+    private int ruudunKoko;
     private int kaytava = -2;
     private int koko;
     
@@ -15,7 +15,8 @@ public class LabyrintinPiirto {
 
     public LabyrintinPiirto(int koko) {
         this.koko = koko;
-        ruudut = Kruskal.luoLabyrintti(koko);
+        ruudunKoko = 20 / (koko / 10) + 4;
+        ruudut = RandomizedKruskal.luoLabyrintti(koko);
         ruudut = LabyrintinMuokkaus.kaytavienLisays(ruudut, koko);
     }
     

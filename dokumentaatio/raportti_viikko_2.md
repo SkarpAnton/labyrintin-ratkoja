@@ -11,7 +11,8 @@ kaarien painot ovat yhtä suuria, joten Djikstran algoritmi on tässä verkossa 
 Tietorakenteiden määrä ei tosin vähenny sillä A* käyttää edelleen kekoa ja hajautustaulua, ja itseasiassa 
 minun pitää lisäksi toteuttaa leveyshakua varten jono-tietorakenne.
 
-Seuraavaksi ajattelin tehdä reitinhaun javan olemassaolevilla tietorakenteilla.
+Seuraavaksi ajattelin tehdä JUnit tesstit olemassaolevillle luokille ja  tehdä reitinhaun javan 
+olemassaolevilla tietorakenteilla.
 
 10h
 

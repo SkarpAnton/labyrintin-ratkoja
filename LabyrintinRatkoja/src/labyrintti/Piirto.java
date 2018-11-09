@@ -16,7 +16,7 @@ public class Piirto {
     public Piirto(int koko) {
         this.koko = koko;
         ruudunKoko = (int)(20 / (koko / 10.0) + 4);
-        ruudut = RandomizedKruskal.luoLabyrintti(koko);
+        ruudut = RandomiKruskal.luoLabyrintti(koko);
         ruudut = Muokkaus.kaytavienLisays(ruudut, koko);
     }
     

@@ -1,10 +1,9 @@
-    
 package labyrintti;
 
 import java.util.Random;
 
 
-public class LabyrintinMuokkaus {
+public class Muokkaus {
     /*
     Poistaa labyrintistä muutaman seinän, jotta labyrintissä olisi hiukan enemmän erilaisia polkuja
     */
@@ -34,6 +33,7 @@ public class LabyrintinMuokkaus {
                             labyrintti[viereinenRuutu].sivut[Suunnat.vasen] = kaytava;
                             break;
                     }
+                    break;
 
                 }
             }

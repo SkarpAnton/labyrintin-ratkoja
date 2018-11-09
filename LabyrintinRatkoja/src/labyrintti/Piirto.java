@@ -4,7 +4,7 @@ package labyrintti;
 
 import java.awt.*;
 
-public class LabyrintinPiirto {
+public class Piirto {
 
     private int ruudunKoko;
     private int kaytava = -2;
@@ -13,11 +13,11 @@ public class LabyrintinPiirto {
     private Ruutu[] ruudut;
     
 
-    public LabyrintinPiirto(int koko) {
+    public Piirto(int koko) {
         this.koko = koko;
         ruudunKoko = 20 / (koko / 10) + 4;
         ruudut = RandomizedKruskal.luoLabyrintti(koko);
-        ruudut = LabyrintinMuokkaus.kaytavienLisays(ruudut, koko);
+        ruudut = Muokkaus.kaytavienLisays(ruudut, koko);
     }
     
 

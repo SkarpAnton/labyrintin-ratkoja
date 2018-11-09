@@ -55,7 +55,12 @@ public class RandomizedKruskal {
 
         UnioniEtsi puu = new UnioniEtsi(ruutujenMaara);
         Random satunnais = new Random();
+        int count = 0;
         while (!puu.yhtenäinenPuu()) {
+            if(count > 1000) {
+                count = 0;
+            }
+            count ++;
             int satunnainenRuutu = satunnais.nextInt(ruutujenMaara);
             int sivu = satunnais.nextInt(4);
             int viereinenRuutu = labyrintti[satunnainenRuutu].sivut[sivu];

@@ -3,13 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/skarp/Documents/NetBeansProjects/Maze/src/labyrintti/UnioniPuu.java</file>
-            <file>file:/C:/Users/skarp/Documents/NetBeansProjects/Maze/src/labyrintti/LabyrintinMuokkaus.java</file>
-            <file>file:/C:/Users/skarp/Documents/NetBeansProjects/Maze/src/labyrintti/Main.java</file>
-            <file>file:/C:/Users/skarp/Documents/NetBeansProjects/Maze/src/labyrintti/GUI.java</file>
-            <file>file:/C:/Users/skarp/Documents/NetBeansProjects/Maze/src/labyrintti/Kruskal.java</file>
-            <file>file:/C:/Users/skarp/Documents/NetBeansProjects/Maze/src/labyrintti/LabyrintinPaneeli.java</file>
-            <file>file:/C:/Users/skarp/Documents/NetBeansProjects/Maze/src/labyrintti/Ruutu.java</file>
+            <file>file:/C:/Users/skarp/Documents/tiralabra/LabyrintinRatkoja/src/labyrintti/Paneeli.java</file>
+            <file>file:/C:/Users/skarp/Documents/tiralabra/LabyrintinRatkoja/src/labyrintti/Piirto.java</file>
+            <file>file:/C:/Users/skarp/Documents/tiralabra/LabyrintinRatkoja/src/labyrintti/Main.java</file>
+            <file>file:/C:/Users/skarp/Documents/tiralabra/LabyrintinRatkoja/src/labyrintti/Muokkaus.java</file>
+            <file>file:/C:/Users/skarp/Documents/tiralabra/LabyrintinRatkoja/src/labyrintti/Ruutu.java</file>
+            <file>file:/C:/Users/skarp/Documents/tiralabra/LabyrintinRatkoja/src/labyrintti/RandomizedKruskal.java</file>
+            <file>file:/C:/Users/skarp/Documents/tiralabra/LabyrintinRatkoja/src/labyrintti/UnioniEtsi.java</file>
+            <file>file:/C:/Users/skarp/Documents/tiralabra/LabyrintinRatkoja/src/labyrintti/Suunnat.java</file>
         </group>
     </open-files>
 </project-private>

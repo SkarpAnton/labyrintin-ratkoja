@@ -4,11 +4,11 @@ import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
-class LabyrinttiPaneeli extends JPanel {
+class Paneeli extends JPanel {
 
-    private LabyrintinPiirto labyrintti;
+    private Piirto labyrintti;
 
-    public LabyrinttiPaneeli(LabyrintinPiirto labyrintti) {
+    public Paneeli(Piirto labyrintti) {
         this.labyrintti = labyrintti;
     }
 

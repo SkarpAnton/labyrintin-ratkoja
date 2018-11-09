@@ -1,6 +1,6 @@
 package labyrintti;
 
-import java.util.InputMismatchException;
+
 import java.util.Scanner;
 
 
@@ -12,12 +12,12 @@ public class Main {
         while(true) {
             try {
                 System.out.print("Syötä lukua viisi suurempi kokonaisluku: ");
-                koko = in.nextInt();
+                koko = Integer.parseInt(in.next());
                 if(koko < 6) {
-                    throw new InputMismatchException();
+                    throw new NumberFormatException();
                 }
                 break;
-            } catch(InputMismatchException e) {
+            } catch(NumberFormatException e) {
                 System.out.println("Syötettu luku ei ole positiivinen kokonaisluku.");
             }
             

@@ -6,15 +6,15 @@ import javax.swing.JPanel;
 
 class Paneeli extends JPanel {
 
-    private Piirto labyrintti;
+    private Piirto piirto;
 
-    public Paneeli(Piirto labyrintti) {
-        this.labyrintti = labyrintti;
+    public Paneeli(Piirto piirto) {
+        this.piirto = piirto;
     }
 
     public void paintComponent(Graphics grafiikka) {
         super.paintComponent(grafiikka);
         setBackground(Color.BLACK); 
-        labyrintti.piirraLabyrintti(grafiikka);
+        piirto.piirraLabyrintti(grafiikka);
     }
 }

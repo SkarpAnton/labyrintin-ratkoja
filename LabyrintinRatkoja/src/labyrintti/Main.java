@@ -22,6 +22,6 @@ public class Main {
             }
             
         }       
-        GUI.tulostaLabyrintti(koko);
+        Tulostus.tulostaLabyrintti(koko);
     }
 }

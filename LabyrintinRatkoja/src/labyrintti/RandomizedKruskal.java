@@ -28,20 +28,19 @@ public class RandomizedKruskal {
         
         //sivut osoittaa viereisiin ruutuihin
         for (int i = 0; i < ruutujenMaara; i++) {
-            labyrintti[i].sivut[Suunnat.ylos] = i - koko;
-            labyrintti[i].sivut[Suunnat.alas] = i + koko;
-            labyrintti[i].sivut[Suunnat.oikea] = i + 1;
-            labyrintti[i].sivut[Suunnat.vasen] = i - 1;
+            labyrintti[i].ylos = i - koko;
+            labyrintti[i].alas = i + koko;
+            labyrintti[i].oikea = i + 1;
+            labyrintti[i].vasen = i - 1;
         }
         //Seinien lisäys reunoille
         for (int i = 0; i < koko; i++) {
-            labyrintti[i].sivut[Suunnat.ylos] = reuna;
-            labyrintti[ruutujenMaara - i - 1].sivut[Suunnat.alas] = reuna;
+            labyrintti[i].ylos = reuna;
+            labyrintti[ruutujenMaara - i - 1].alas = reuna;
+            labyrintti[i * koko].vasen = reuna;
+            labyrintti[ruutujenMaara - i * koko - 1].oikea = reuna;
         }
-        for (int i = 0; i < ruutujenMaara; i += koko) {
-            labyrintti[i].sivut[Suunnat.vasen] = reuna;
-            labyrintti[ruutujenMaara - i - 1].sivut[Suunnat.oikea] = reuna;
-        }
+        
     }
 
     /*
@@ -58,25 +57,11 @@ public class RandomizedKruskal {
         while (!puu.yhtenäinenPuu()) {
             int satunnainenRuutu = satunnais.nextInt(ruutujenMaara);
             int sivu = satunnais.nextInt(4);
-            int viereinenRuutu = labyrintti[satunnainenRuutu].sivut[sivu];
+            int viereinenRuutu = Suunnat.getSuunta(sivu, labyrintti[satunnainenRuutu]);
             if (viereinenRuutu != reuna && viereinenRuutu != kaytava) {
                 if (puu.etsi(satunnainenRuutu) != puu.etsi(viereinenRuutu)) {
-                    labyrintti[satunnainenRuutu].sivut[sivu] = kaytava;
-                    switch(sivu) {
-                        case Suunnat.ylos: 
-                            labyrintti[viereinenRuutu].sivut[Suunnat.alas] = kaytava;
-                            break;
-                        case Suunnat.alas:
-                            labyrintti[viereinenRuutu].sivut[Suunnat.ylos] = kaytava;
-                            break;
-                        case Suunnat.vasen:
-                            labyrintti[viereinenRuutu].sivut[Suunnat.oikea] = kaytava;
-                            break;
-                        case Suunnat.oikea:
-                            labyrintti[viereinenRuutu].sivut[Suunnat.vasen] = kaytava;
-                            break;
-                    }
-                    
+                    Suunnat.setKaytava(sivu, labyrintti[satunnainenRuutu], false);
+                    Suunnat.setKaytava(sivu, labyrintti[viereinenRuutu], true);
                     puu.unioni(puu.etsi(satunnainenRuutu), puu.etsi(viereinenRuutu));
                 }
             }

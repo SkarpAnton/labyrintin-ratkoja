@@ -2,9 +2,8 @@
 package labyrintti;
 
 public class Ruutu {
-    public int[] sivut;
-
-    public Ruutu() {
-        sivut = new int[4];
-    }
+    int vasen;
+    int oikea;
+    int ylos;
+    int alas;    
 }

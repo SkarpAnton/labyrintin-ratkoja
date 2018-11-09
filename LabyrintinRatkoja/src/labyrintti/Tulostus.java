@@ -11,8 +11,8 @@ public class Tulostus {
 
         Piirto labyrintti = new Piirto(koko);
         JFrame frame = new JFrame("Labyrintti");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1000, 1000);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JScrollPane scrollPane = new JScrollPane(new Paneeli(labyrintti));
         frame.add(scrollPane, BorderLayout.CENTER);
         frame.setVisible(true);

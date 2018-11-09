@@ -27,22 +27,22 @@ public class Piirto {
             int ruudunIndeksi = j * koko;
             for (int i = 0; i < koko; i++) {
                 
-                if (ruudut[ruudunIndeksi].sivut[Suunnat.vasen] != kaytava) {
+                if (ruudut[ruudunIndeksi].vasen != kaytava) {
                     grafiikka.drawLine(i * ruudunKoko, j * ruudunKoko, 
                             i * ruudunKoko, (j + 1) * ruudunKoko);
                 }
                 
-                if (ruudut[ruudunIndeksi].sivut[Suunnat.ylos] != kaytava) {
+                if (ruudut[ruudunIndeksi].ylos != kaytava) {
                     grafiikka.drawLine(i * ruudunKoko, j * ruudunKoko,
                             (i + 1) * ruudunKoko, j * ruudunKoko);
                 }
 
-                if (ruudut[ruudunIndeksi].sivut[Suunnat.alas] != kaytava) {
+                if (ruudut[ruudunIndeksi].alas != kaytava) {
                     grafiikka.drawLine(i * ruudunKoko, (j + 1) * ruudunKoko,
                             (i + 1) * ruudunKoko, (j + 1) * ruudunKoko);
                 }
 
-                if (ruudut[ruudunIndeksi].sivut[Suunnat.oikea] != kaytava) {
+                if (ruudut[ruudunIndeksi].oikea != kaytava) {
                     grafiikka.drawLine((i + 1) * ruudunKoko, j * ruudunKoko,
                             (i + 1) * ruudunKoko, (j + 1) * ruudunKoko);
                 }

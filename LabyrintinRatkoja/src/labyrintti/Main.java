@@ -18,7 +18,7 @@ public class Main {
                 }
                 break;
             } catch(NumberFormatException e) {
-                System.out.println("Syötettu luku ei ole positiivinen kokonaisluku.");
+                System.out.println("Syötettu luku ei ole viittä suurempi kokonaisluku.");
             }
             
         }       

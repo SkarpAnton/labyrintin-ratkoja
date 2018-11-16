@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 
+import labyrintti.HakuAlgoritmit;
+import labyrintti.Ruutu;
+import labyrintti.SatunnainenKruskal;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -15,7 +18,12 @@ import static org.junit.Assert.*;
  */
 public class HakualgoritmitTest {
     
+    private Ruutu[] labyrintti;
+    
     public HakualgoritmitTest() {
+        labyrintti = SatunnainenKruskal.luoLabyrintti(100, 150, 200);
+        HakuAlgoritmit.Leveyshaku(150, 750, labyrintti, 100);
+        HakuAlgoritmit.AStar(150, 750, labyrintti, 100);
     }
     
     @BeforeClass

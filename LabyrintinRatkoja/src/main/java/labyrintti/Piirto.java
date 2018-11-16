@@ -18,7 +18,7 @@ public class Piirto {
         this.ruudunKoko = ruudunKoko;
         merkinKoko = ruudunKoko / 4 + 1;
         labyrintti = SatunnainenKruskal.luoLabyrintti(ruutujenMaaraSivulla, alku, maaranpaa);
-        HakuAlgoritmit.Leveyshaku(alku, maaranpaa, labyrintti, ruutujenMaaraSivulla);
+        HakuAlgoritmit.AStar(alku, maaranpaa, labyrintti, ruutujenMaaraSivulla);
     }
     
 
@@ -53,11 +53,10 @@ public class Piirto {
         grafiikka.setColor(Color.ORANGE);
         int seuraava = maaranpaa;
         while(seuraava != alku){
-            System.out.println(seuraava);
             grafiikka.fillRect(seuraava % ruutujenMaaraSivulla * ruudunKoko + merkinKoko / 2
                     , seuraava / ruutujenMaaraSivulla * ruudunKoko  + merkinKoko / 2, merkinKoko, merkinKoko);
             Ruutu ruutu = labyrintti[seuraava];
-            seuraava = ruutu.getLeveyshakuEdellinen();
+            seuraava = ruutu.getAStarEdellinen();
             
         }
         grafiikka.setColor(Color.GREEN);

@@ -2,6 +2,7 @@
 package labyrintti;
 
 import java.util.ArrayDeque;
+import java.util.PriorityQueue;
 
 public class HakuAlgoritmit {
     
@@ -49,5 +50,65 @@ public class HakuAlgoritmit {
                 }
             }  
         }
+    }
+    public static void AStar(int alku, int maaranpaa, Ruutu[] labyrintti, int ruutujenMaaraSivulla) {
+        PriorityQueue<RuutuJaPrioriteetti> keko = new PriorityQueue<>();
+        int prioriteetti = relaksointi(alku, maaranpaa, ruutujenMaaraSivulla);
+        RuutuJaPrioriteetti alkuJaPrioriteetti = new RuutuJaPrioriteetti(alku, prioriteetti, alku);
+        keko.add(alkuJaPrioriteetti);
+        while(true) {
+            RuutuJaPrioriteetti nykyinen = keko.poll();
+            System.out.println(nykyinen.getRuudunIndeksi());
+            Ruutu nykyinenRuutu = labyrintti[nykyinen.getRuudunIndeksi()];
+            nykyinenRuutu.setAStarEdellinen(nykyinen.getEdellinen());
+            if(nykyinen.getRuudunIndeksi() == maaranpaa) {
+                break;
+            }
+            if(nykyinenRuutu.getAlas() == KAYTAVA) {
+                int alas = nykyinen.getRuudunIndeksi() + ruutujenMaaraSivulla;
+                Ruutu alempiRuutu = labyrintti[alas];            
+                if(alempiRuutu.getAStarEdellinen() == -1){
+                    relaksointi(alas, maaranpaa, ruutujenMaaraSivulla);
+                    RuutuJaPrioriteetti alempiRuutuJaPrioriteetti 
+                            = new RuutuJaPrioriteetti(alas, prioriteetti, nykyinen.getRuudunIndeksi());
+                    keko.add(alempiRuutuJaPrioriteetti);
+                }  
+            }
+            if(nykyinenRuutu.getYlos() == KAYTAVA) {
+                int ylos = nykyinen.getRuudunIndeksi() - ruutujenMaaraSivulla;
+                Ruutu ylempiRuutu = labyrintti[ylos]; 
+                if(ylempiRuutu.getAStarEdellinen() == -1){
+                    relaksointi(ylos, maaranpaa, ruutujenMaaraSivulla);
+                    RuutuJaPrioriteetti ylempiRuutuJaPrioriteetti 
+                            = new RuutuJaPrioriteetti(ylos, prioriteetti, nykyinen.getRuudunIndeksi());
+                    keko.add(ylempiRuutuJaPrioriteetti);
+                }
+            }
+            if(nykyinenRuutu.getOikea() == KAYTAVA) {
+                int oikea = nykyinen.getRuudunIndeksi() + 1;
+                Ruutu oikeaRuutu = labyrintti[oikea];
+                if(oikeaRuutu.getAStarEdellinen() == -1){
+                    relaksointi(oikea, maaranpaa, ruutujenMaaraSivulla);
+                    RuutuJaPrioriteetti oikeaRuutuJaPrioriteetti 
+                            = new RuutuJaPrioriteetti(oikea, prioriteetti, nykyinen.getRuudunIndeksi());
+                    keko.add(oikeaRuutuJaPrioriteetti);
+                }
+            }
+            if(nykyinenRuutu.getVasen() == KAYTAVA) {
+                int vasen = nykyinen.getRuudunIndeksi() - 1;
+                Ruutu vasenRuutu = labyrintti[vasen]; 
+                if(vasenRuutu.getAStarEdellinen() == -1){
+                    relaksointi(vasen, maaranpaa, ruutujenMaaraSivulla);
+                    RuutuJaPrioriteetti alempiRuutuJaPrioriteetti 
+                            = new RuutuJaPrioriteetti(vasen, prioriteetti, nykyinen.getRuudunIndeksi());
+                    keko.add(alempiRuutuJaPrioriteetti);
+                }
+            }  
+        }
+    }
+    public static int relaksointi(int nykyinen, int maaranpaa, int ruutujenMaaraSivulla) {
+        int xDiff = maaranpaa % ruutujenMaaraSivulla - nykyinen % ruutujenMaaraSivulla;
+        int yDiff = maaranpaa / ruutujenMaaraSivulla - nykyinen / ruutujenMaaraSivulla;
+        return (int)Math.sqrt(xDiff * xDiff + yDiff * yDiff) + 1;
     }
 }

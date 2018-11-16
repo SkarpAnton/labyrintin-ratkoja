@@ -13,7 +13,8 @@ public class Syote {
         int ruutujenMaaraSivulla;
         while(true) {
             try {
-                System.out.print("Syötä monta ruutua labytintin sivulla on, mikä on  lukua viisi suurempi kokonaisluku: ");
+                System.out.println("Ruudun sivun täytyy olla viittä suurempi kokonaisluku.");
+                System.out.print("Monta ruutua labyrintin sivulla on: ");
                 ruutujenMaaraSivulla = Integer.parseInt(in.next());
                 if(ruutujenMaaraSivulla < 6) {
                     throw new NumberFormatException();

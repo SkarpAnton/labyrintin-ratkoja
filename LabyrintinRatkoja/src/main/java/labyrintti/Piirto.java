@@ -53,17 +53,17 @@ public class Piirto {
         grafiikka.setColor(Color.ORANGE);
         int seuraava = maaranpaa;
         while(seuraava != alku){
-            grafiikka.fillRect(seuraava % ruutujenMaaraSivulla * ruudunKoko + merkinKoko / 2
-                    , seuraava / ruutujenMaaraSivulla * ruudunKoko  + merkinKoko / 2, merkinKoko, merkinKoko);
+            grafiikka.fillRect(seuraava % ruutujenMaaraSivulla * ruudunKoko + ruudunKoko / 2
+                    , seuraava / ruutujenMaaraSivulla * ruudunKoko  + ruudunKoko / 2, merkinKoko, merkinKoko);
             Ruutu ruutu = labyrintti[seuraava];
             seuraava = ruutu.getAStarEdellinen();
             
         }
         grafiikka.setColor(Color.GREEN);
-        grafiikka.fillRect(alku % ruutujenMaaraSivulla * ruudunKoko + merkinKoko / 2
-                    , alku / ruutujenMaaraSivulla * ruudunKoko  + merkinKoko / 2, merkinKoko, merkinKoko);
-        grafiikka.fillRect(maaranpaa % ruutujenMaaraSivulla * ruudunKoko + merkinKoko / 2
-                    , maaranpaa/ ruutujenMaaraSivulla * ruudunKoko  + merkinKoko / 2, merkinKoko, merkinKoko);
+        grafiikka.fillRect(alku % ruutujenMaaraSivulla * ruudunKoko + ruudunKoko / 2
+                    , alku / ruutujenMaaraSivulla * ruudunKoko  + ruudunKoko / 2, merkinKoko, merkinKoko);
+        grafiikka.fillRect(maaranpaa % ruutujenMaaraSivulla * ruudunKoko + ruudunKoko / 2
+                    , maaranpaa/ ruutujenMaaraSivulla * ruudunKoko  + ruudunKoko / 2, merkinKoko, merkinKoko);
    
     }
 

@@ -19,7 +19,7 @@ public class SatunnainenKruskalTest {
     private final int reuna = -1;
     private final int kaytava = -2;
     public SatunnainenKruskalTest() {
-        labyrintti = SatunnainenKruskal.luoLabyrintti(ruutujenMaaraSivulla, 1, 50);
+        labyrintti = SatunnainenKruskal.luoLabyrintti(ruutujenMaaraSivulla);
     }
     
     @Test

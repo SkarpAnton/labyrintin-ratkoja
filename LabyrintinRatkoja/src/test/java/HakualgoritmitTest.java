@@ -17,21 +17,76 @@ import static org.junit.Assert.*;
  * @author skarp
  */
 public class HakualgoritmitTest {
-    
+    private int alku = 150;
+    private int maaranpaa = 750;
+    private int ruutujenMaaraSivulla = 100;
+    private int kaytava = -2;
     private Ruutu[] labyrintti;
     
     public HakualgoritmitTest() {
-        labyrintti = SatunnainenKruskal.luoLabyrintti(100, 150, 200);
-        HakuAlgoritmit.Leveyshaku(150, 750, labyrintti, 100);
-        HakuAlgoritmit.AStar(150, 750, labyrintti, 100);
+        labyrintti = SatunnainenKruskal.luoLabyrintti(ruutujenMaaraSivulla);
+        HakuAlgoritmit.Leveyshaku(alku, maaranpaa, labyrintti, ruutujenMaaraSivulla);
+        HakuAlgoritmit.AStar(alku, maaranpaa, labyrintti, ruutujenMaaraSivulla);
     }
     
-    @BeforeClass
-    public static void setUpClass() {
+    @Test
+    public void leveysHaunJaAstarinPolunPituusSama() {
+        int seuraavaAStar = maaranpaa;
+        int seuraavaLeveysHaku = maaranpaa;
+        while(seuraavaAStar != alku && seuraavaLeveysHaku != alku){
+            Ruutu ruutuLeveysHaku = labyrintti[seuraavaLeveysHaku];
+            Ruutu ruutuAStar = labyrintti[seuraavaAStar];
+            seuraavaAStar = ruutuAStar.getAStarEdellinen();
+            seuraavaLeveysHaku = ruutuLeveysHaku.getLeveyshakuEdellinen();
+        }
+        assertEquals(seuraavaAStar, alku);
+        assertEquals(seuraavaLeveysHaku, alku);
     }
     
-    @Before
-    public void setUp() {
+    @Test
+    public void leveysHakuEiMeneYliSeinien() {
+        int nykyinen = maaranpaa;
+        int vanha = maaranpaa;
+        while(nykyinen != alku){
+            Ruutu ruutu = labyrintti[nykyinen];
+            vanha = nykyinen;
+            nykyinen = ruutu.getLeveyshakuEdellinen();
+            if(nykyinen - vanha == -ruutujenMaaraSivulla) {
+                assertTrue(ruutu.getYlos() == kaytava);
+            }
+            if(nykyinen - vanha == ruutujenMaaraSivulla) {
+                assertTrue(ruutu.getAlas() == kaytava);
+            }
+            if(nykyinen - vanha == 1) {
+                assertTrue(ruutu.getOikea() == kaytava);
+            }
+            if(nykyinen - vanha == -1) {
+                assertTrue(ruutu.getVasen() == kaytava);
+            }
+        }
+    }
+    
+    @Test
+    public void AStarEiMeneYliSeinien() {
+        int nykyinen = maaranpaa;
+        int vanha = maaranpaa;
+        while(nykyinen != alku){
+            Ruutu ruutu = labyrintti[nykyinen];
+            vanha = nykyinen;
+            nykyinen = ruutu.getAStarEdellinen();
+            if(nykyinen - vanha == -ruutujenMaaraSivulla) {
+                assertTrue(ruutu.getYlos() == kaytava);
+            }
+            if(nykyinen - vanha == ruutujenMaaraSivulla) {
+                assertTrue(ruutu.getAlas() == kaytava);
+            }
+            if(nykyinen - vanha == 1) {
+                assertTrue(ruutu.getOikea() == kaytava);
+            }
+            if(nykyinen - vanha == -1) {
+                assertTrue(ruutu.getVasen() == kaytava);
+            }
+        }
     }
     
 }

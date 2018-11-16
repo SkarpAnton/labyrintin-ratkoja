@@ -51,6 +51,7 @@ public class HakuAlgoritmit {
             }  
         }
     }
+    
     public static void AStar(int alku, int maaranpaa, Ruutu[] labyrintti, int ruutujenMaaraSivulla) {
         PriorityQueue<RuutuJaPrioriteetti> keko = new PriorityQueue<>();
         int prioriteetti = relaksointi(alku, maaranpaa, ruutujenMaaraSivulla);
@@ -58,7 +59,6 @@ public class HakuAlgoritmit {
         keko.add(alkuJaPrioriteetti);
         while(true) {
             RuutuJaPrioriteetti nykyinen = keko.poll();
-            System.out.println(nykyinen.getRuudunIndeksi());
             Ruutu nykyinenRuutu = labyrintti[nykyinen.getRuudunIndeksi()];
             nykyinenRuutu.setAStarEdellinen(nykyinen.getEdellinen());
             if(nykyinen.getRuudunIndeksi() == maaranpaa) {

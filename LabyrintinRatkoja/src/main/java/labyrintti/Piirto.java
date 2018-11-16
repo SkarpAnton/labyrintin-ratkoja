@@ -17,7 +17,7 @@ public class Piirto {
         this.ruutujenMaaraSivulla = ruutujenMaaraSivulla;
         this.ruudunKoko = ruudunKoko;
         merkinKoko = ruudunKoko / 4 + 1;
-        labyrintti = SatunnainenKruskal.luoLabyrintti(ruutujenMaaraSivulla, alku, maaranpaa);
+        labyrintti = SatunnainenKruskal.luoLabyrintti(ruutujenMaaraSivulla);
         HakuAlgoritmit.AStar(alku, maaranpaa, labyrintti, ruutujenMaaraSivulla);
     }
     

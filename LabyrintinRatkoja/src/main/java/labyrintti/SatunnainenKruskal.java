@@ -13,7 +13,7 @@ public class SatunnainenKruskal {
     
     private SatunnainenKruskal(){};
     
-    public static Ruutu[] luoLabyrintti(int ruutujenMaaraSivulla, int alku, int maaranpaa) {
+    public static Ruutu[] luoLabyrintti(int ruutujenMaaraSivulla) {
         alustus(ruutujenMaaraSivulla);
         virittavanPuunLuominen();
         return labyrintti;

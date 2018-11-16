@@ -2,7 +2,7 @@ package labyrintti;
 
 public class UnioniEtsi {
 
-    private int[] puut;
+    private final int[] puut;
     private int puidenMaara;
     
     public UnioniEtsi(int ruutujenMaara) {

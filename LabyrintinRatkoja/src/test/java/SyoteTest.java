@@ -7,7 +7,7 @@
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import labyrintti.Syote;
-import org.junit.*;
+    import org.junit.*;
 import static org.junit.Assert.*;
 
 /**

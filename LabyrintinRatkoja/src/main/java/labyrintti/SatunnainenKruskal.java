@@ -49,7 +49,7 @@ public class SatunnainenKruskal {
     Kaikkien labyrintien siirtymien paino on sama, joten kaaria ei taritse järjestää 
     ja voidaan vain valita ruutuja satunnaisestti. Metodi näyttäisi olevan 
     tarpeeksi nopea käyttötarkoitukseen vaikka se valitsee ruudut satunnaisesti,
-    sillä labrintin, jonka sivun pituus on suurempi kuin 1000 alkaa olla hankala 
+    sillä labyrintin, jonka sivun pituus on suurempi kuin 1000 alkaa olla hankala 
     kuvata. 
     */
     private static void virittavanPuunLuominen() {

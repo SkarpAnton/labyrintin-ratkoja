@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
  * @author skarp
  */
 public class SatunnainenKruskalTest {
-    Ruutu[] labyrintti;
+    private final Ruutu[] labyrintti;
     private final int ruutujenMaaraSivulla = 1000;
     private final int ruutujenMaara = ruutujenMaaraSivulla * ruutujenMaaraSivulla;
     private final int reuna = -1;

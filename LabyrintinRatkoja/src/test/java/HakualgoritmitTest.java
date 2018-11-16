@@ -7,8 +7,6 @@
 import labyrintti.HakuAlgoritmit;
 import labyrintti.Ruutu;
 import labyrintti.SatunnainenKruskal;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -17,11 +15,11 @@ import static org.junit.Assert.*;
  * @author skarp
  */
 public class HakualgoritmitTest {
-    private int alku = 150;
-    private int maaranpaa = 750;
-    private int ruutujenMaaraSivulla = 100;
-    private int kaytava = -2;
-    private Ruutu[] labyrintti;
+    private final int alku = 150;
+    private final int maaranpaa = 750;
+    private final int ruutujenMaaraSivulla = 100;
+    private final int kaytava = -2;
+    private final Ruutu[] labyrintti;
     
     public HakualgoritmitTest() {
         labyrintti = SatunnainenKruskal.luoLabyrintti(ruutujenMaaraSivulla);

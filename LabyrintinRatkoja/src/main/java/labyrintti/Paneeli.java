@@ -6,9 +6,9 @@ import javax.swing.JPanel;
 
 class Paneeli extends JPanel {
 
-    private Piirto piirto;
-    private int alku;
-    private int maaranPaa;
+    private final Piirto piirto;
+    private final int alku;
+    private final int maaranPaa;
 
     public Paneeli(Piirto piirto, int alku, int maaranPaa) {
         this.piirto = piirto;
@@ -16,6 +16,7 @@ class Paneeli extends JPanel {
         this.maaranPaa = maaranPaa;
     }
 
+    @Override
     public void paintComponent(Graphics grafiikka) {
         super.paintComponent(grafiikka);
         setBackground(Color.BLACK); 

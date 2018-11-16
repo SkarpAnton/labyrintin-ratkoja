@@ -2,7 +2,7 @@
 package labyrintti;
 
 public class Suunnat {
-    private static int kaytava = -2;
+    private static final int KAYTAVA = -2;
     
     private Suunnat(){};
     
@@ -18,29 +18,29 @@ public class Suunnat {
         if(!toisinPain) {
             switch(sivu){
                 case 0: 
-                    ruutu.setYlos(kaytava);
+                    ruutu.setYlos(KAYTAVA);
                     return;
                 case 1: 
-                    ruutu.setAlas(kaytava);
+                    ruutu.setAlas(KAYTAVA);
                     return;
                 case 2: 
-                    ruutu.setVasen(kaytava);
+                    ruutu.setVasen(KAYTAVA);
                     return;
             }
-            ruutu.setOikea(kaytava);
+            ruutu.setOikea(KAYTAVA);
         } else {
             switch(sivu){
                 case 0: 
-                    ruutu.setAlas(kaytava);
+                    ruutu.setAlas(KAYTAVA);
                     return;
                 case 1: 
-                    ruutu.setYlos(kaytava);
+                    ruutu.setYlos(KAYTAVA);
                     return;
                 case 2: 
-                    ruutu.setOikea(kaytava);
+                    ruutu.setOikea(KAYTAVA);
                     return;
             }
-            ruutu.setVasen(kaytava);
+            ruutu.setVasen(KAYTAVA);
         }
     }
 }

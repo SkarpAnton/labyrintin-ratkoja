@@ -9,7 +9,7 @@ Pitää vähän miettiä miten GUI:ta voisi automaattisesti testata.
 A* ei tarvitsekaan hajautustaulua, koska pidänkin ruutuja taulukossa, joten  haku on nopeaa
 ilman hajautusrakennettakin. 
 
-Seuraavalla viikolla lisään testejä, ja aloitan keon ja jono tietorakenteiden implementaation.
+Seuraavalla viikolla lisään testejä, lisään hiukan visuaaleihin ja aloitan keon ja jono tietorakenteiden implementaation.
 
 12h
 

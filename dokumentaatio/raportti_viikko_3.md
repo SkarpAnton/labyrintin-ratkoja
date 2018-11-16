@@ -6,7 +6,7 @@ alkuruudusta määränpäähän. Lisäsin testejä, jotka testaavat viime viikol
 luokkia. Testit eivät ole vielä kattavia, pitää vähän miettiä miten
 GUI:ta voisi automaattisesti testata. En ole vielä tehnyt testejä leveyshaulle ja A*:lle.
 
-A* ei tarvitsekaan hajautustaulua, koska pidänkin solmuja taulukossa, joten  haku on nopeaa
+A* ei tarvitsekaan hajautustaulua, koska pidänkin ruutuja taulukossa, joten  haku on nopeaa
 ilman hajautusrakennettakin. 
 
 Seuraavalla viikolla lisään testejä ja aloitan keon ja jono tietorakenteiden implementaation.

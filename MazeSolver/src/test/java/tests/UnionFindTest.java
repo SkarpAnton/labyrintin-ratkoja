@@ -1,3 +1,4 @@
+package tests;
 
 import maze.datastructures.UnionFind;
 import org.junit.Before;

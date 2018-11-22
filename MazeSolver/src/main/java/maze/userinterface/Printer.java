@@ -1,6 +1,5 @@
 package maze.userinterface;
 
-import maze.userinterface.Drawer;
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -15,10 +14,10 @@ public class Printer {
     public static void printMaze(MazeSize sizes) {
         
         RandomStartAndDestination startAndDestination
-                = new RandomStartAndDestination(sizes.getAmountOfSquares());
+                = new RandomStartAndDestination(sizes.getAmountOfSquares(), sizes.getMazeWidth());
         Drawer drawer = new Drawer(sizes, startAndDestination.getStart(),
                 startAndDestination.getDestination());
-        JFrame frame = new JFrame("Maze");
+        JFrame frame = new JFrame("maze");
         frame.setSize(sizes.getFrameWidth() + 20, sizes.getFrameWidth() + 50);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Panel maze = new Panel(drawer, startAndDestination.getStart(),

@@ -1,6 +1,9 @@
-package maze.userinterface;
+package maze.controller;
 
 import maze.datastructures.MazeSize;
+import maze.userinterface.Input;
+import maze.userinterface.Printer;
+
 
 
 public class Main {
@@ -9,5 +12,6 @@ public class Main {
         int mazeWidth = Input.getWidthOfMaze();
         MazeSize sizes = new MazeSize(mazeWidth);
         Printer.printMaze(sizes);
+        
     }
 }

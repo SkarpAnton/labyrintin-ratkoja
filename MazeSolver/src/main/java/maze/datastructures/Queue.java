@@ -2,11 +2,14 @@ package maze.datastructures;
 
 public class Queue {
 
-    private int[] queue;
+    private final int[] queue;
     private int head = 0;
     private int tail = 0;
-    private int size;
+    private final int size;
 
+    /*
+    * Creates queue, parameter amountOfSquares is the maximum size of this queue.
+    */
     public Queue(int amountOfSquares) {
         this.queue = new int[amountOfSquares];
         size = amountOfSquares;

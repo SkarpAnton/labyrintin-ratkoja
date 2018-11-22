@@ -1,9 +1,10 @@
 
 package maze.datastructures;
 
-public class TypesOfSquares {
+public class TypesOfSides {
     private static final int HALLWAY = -2;
     private static final int BORDER = -1;
+    private static final int WALL = 1;
 
     public static int getHALLWAY() {
         return HALLWAY;
@@ -11,6 +12,10 @@ public class TypesOfSquares {
 
     public static int getBORDER() {
         return BORDER;
+    }
+
+    public static int getWALL() {
+        return WALL;
     }
     
 }

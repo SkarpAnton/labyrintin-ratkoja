@@ -1,25 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+package tests;
 
 import maze.datastructures.Square;
 import maze.algorithms.RandomKruskal;
-import maze.datastructures.TypesOfSquares;
+import maze.datastructures.TypesOfSides;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author skarp
- */
+
 public class RandomKruskalTest {
     private final Square[] maze;
     private final int mazeWidth = 1000;
     private final int amountOfSquares = mazeWidth * mazeWidth;
-    private final int border = TypesOfSquares.getBORDER();
-    private final int hallway = TypesOfSquares.getHALLWAY();
+    private final int border = TypesOfSides.getBORDER();
+    private final int hallway = TypesOfSides.getHALLWAY();
     public RandomKruskalTest() {
         maze = RandomKruskal.createMaze(mazeWidth);
     }
@@ -28,10 +21,10 @@ public class RandomKruskalTest {
     public void borderTest() {
         for (int i = 0; i < mazeWidth; i++) {
             
-            assertEquals(border, maze[i].getUpper());
-            assertEquals(border, maze[amountOfSquares - i - 1].getLower());
-            assertEquals(border, maze[i * mazeWidth].getLeft());
-            assertEquals(border, maze[amountOfSquares - i * mazeWidth - 1].getRight());
+            assertEquals(border, maze[i].getUpperSide());
+            assertEquals(border, maze[amountOfSquares - i - 1].getLowerSide());
+            assertEquals(border, maze[i * mazeWidth].getLeftSide());
+            assertEquals(border, maze[amountOfSquares - i * mazeWidth - 1].getRightSide());
             
         }
     }
@@ -39,8 +32,8 @@ public class RandomKruskalTest {
     @Test
     public void everySquareHasHallway() {
         for(int i = 0; i < amountOfSquares; i++) {
-            assertTrue(maze[i].getLeft() == hallway || maze[i].getUpper() == hallway ||
-                    maze[i].getLower() == hallway || maze[i].getRight() == hallway);
+            assertTrue(maze[i].getLeftSide() == hallway || maze[i].getUpperSide() == hallway ||
+                    maze[i].getLowerSide() == hallway || maze[i].getRightSide() == hallway);
         }
     }
     

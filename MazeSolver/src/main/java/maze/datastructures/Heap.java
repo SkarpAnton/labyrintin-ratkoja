@@ -2,28 +2,31 @@ package maze.datastructures;
 
 public class Heap {
 
-    private SquareAndPriority[] heap;
+    private ObjectForHeap[] heap;
     private int size = -1;
-
+    
+    /*
+    * Constructs heap, parameter is the maximum size of the heap;
+    */
     public Heap(int amountOfSquares) {
-        this.heap = new SquareAndPriority[amountOfSquares];
+        this.heap = new ObjectForHeap[amountOfSquares / 2];
     }
 
-    public void add(SquareAndPriority squareAndPriority) {
-        size++;
+    public void add(ObjectForHeap object) {
+        size++;    
         int index = size;
-        while (index > 0 && squareAndPriority.compareTo(heap[parent(index)])) {
+        while (index > 0 && object.compareTo(heap[parent(index)])) {
             heap[index] = heap[parent(index)];
             index = parent(index);
         }
-        heap[index] = squareAndPriority;
+        heap[index] = object;
     }
 
-    public SquareAndPriority poll() {
-        SquareAndPriority min = heap[0];
+    public ObjectForHeap poll() {
+        ObjectForHeap min = heap[0];
         heap[0] = heap[size];
-        size--;
         heapify(0);
+        size--;
         return min;
     }
 
@@ -42,24 +45,27 @@ public class Heap {
     private void heapify(int index) {
         int left = left(index);
         int right = right(index);
-        int largest = right;
-        if (right <= size) {
-            if (heap[left].compareTo(heap[right])) {
-                largest = left;
-            }
-            if (heap[largest].compareTo(heap[index])) {
-                swap(heap[largest], heap[index]);
-                heapify(largest);
-            }
-        } else if (left == size && heap[left].compareTo(heap[index])) {
-            swap(heap[left], heap[index]);
+        if (right >= size && left >= size) {
+            return;
+        }
+        int smallest = right;
+        if (heap[left].compareTo(heap[right])) {
+            smallest = left;
+        }
+        if (heap[index].compareTo(heap[smallest])) {
+            smallest = index;
+        }
+        if (smallest != index) {
+            swap(heap[index], heap[smallest], index, smallest);
+            heapify(smallest);
         }
     }
 
-    private void swap(SquareAndPriority first, SquareAndPriority second) {
-        SquareAndPriority copyOfFirst = new SquareAndPriority(first.getIndexOfSquare(),
-                first.getDistance(), first.getPrevious());
-        first = second;
-        second = copyOfFirst;
+    private void swap(ObjectForHeap first, ObjectForHeap second,
+            int firstIndex, int secondIndex) {
+        ObjectForHeap copyOfFirst = new ObjectForHeap(first.getIndexOfSquare(),
+                first.getPriority(), first.getPrevious(), first.getDistance());
+        heap[firstIndex] = second;
+        heap[secondIndex] = copyOfFirst;
     }
 }

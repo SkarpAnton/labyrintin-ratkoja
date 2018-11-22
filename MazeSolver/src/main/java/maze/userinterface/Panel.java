@@ -1,6 +1,5 @@
 package maze.userinterface;
 
-import maze.userinterface.Drawer;
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
@@ -21,7 +20,7 @@ class Panel extends JPanel {
     public void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
         setBackground(Color.BLACK);
-        drawer.piirraLabyrintti(graphics);
+        drawer.drawWalls(graphics);
         drawer.drawPaths(graphics, start, destination);
         drawer.drawVisited(graphics);
     }

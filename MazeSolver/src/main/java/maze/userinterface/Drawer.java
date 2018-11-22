@@ -96,23 +96,21 @@ public class Drawer {
     }
 
     public void drawVisited(Graphics graphics) {
-        
+
         int notVisited = -1;
-        for (int j = 0, indexOfSquare = 0; j < sizes.getMazeWidth(); j++) {
-            for (int i = 0; i < sizes.getMazeWidth(); i++, indexOfSquare++) {
-                graphics.setColor(Color.CYAN);
-                if (maze[indexOfSquare].getAStarPrevious() != notVisited) {
-                    addMarkVisited(graphics, indexOfSquare);
-                }
-                graphics.setColor(Color.MAGENTA);
-                if (maze[indexOfSquare].getBfsPrevious() != notVisited) {
-                    addMarkVisited(graphics, indexOfSquare);
-                }
-                graphics.setColor(Color.ORANGE);
-                if (maze[indexOfSquare].getAStarPrevious() != notVisited
-                        && maze[indexOfSquare].getBfsPrevious() != notVisited) {
-                    addMarkVisited(graphics, indexOfSquare);
-                }
+        for (int i = 0; i < sizes.getAmountOfSquares(); i++) {
+            graphics.setColor(Color.CYAN);
+            if (maze[i].getAStarPrevious() != notVisited) {
+                addMarkVisited(graphics, i);
+            }
+            graphics.setColor(Color.MAGENTA);
+            if (maze[i].getBfsPrevious() != notVisited) {
+                addMarkVisited(graphics, i);
+            }
+            graphics.setColor(Color.ORANGE);
+            if (maze[i].getAStarPrevious() != notVisited
+                    && maze[i].getBfsPrevious() != notVisited) {
+                addMarkVisited(graphics, i);
             }
         }
     }

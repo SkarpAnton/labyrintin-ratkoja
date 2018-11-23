@@ -1,4 +1,4 @@
-# Testausdokumentti
+# Testaus
 
 Aikavaativuuksien testaus on hyvin kesken tällä hetkellä. Suorituksen aikana ohjelmani mittaa suoritetun ajan Kruskalilta, A*:lta
 ja leveyshaulta. Olen käyttänyt aikoja tarkistaakseni, että A* toimii järkevästi ja hahmottaakseni suunnilleen algoritmien aikavaativuudet.

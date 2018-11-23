@@ -5,6 +5,7 @@ Tarkoituksena olisi vertailla A* ja leveyshaun aikavaativuutta satunnaisten laby
 ## Dokumentaatio
 
 [Dokumentaatio](https://github.com/SkarpAnton/labyrintin-ratkoja/tree/master/dokumentaatio)
+
 [Alkuperäinen määrittelydokumentti](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/maarittelydokumentti.md)
 
 ## Komentorivitoiminnot (Täysin kopioitu ohjelmistotekniikan esimerkki projektista)

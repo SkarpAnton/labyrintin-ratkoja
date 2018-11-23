@@ -2,7 +2,7 @@ package maze.datastructures;
 
 import java.util.Random;
 
-public class RandomStartAndDestination {
+public final class RandomStartAndDestination {
 
     private int start;
     private int destination;

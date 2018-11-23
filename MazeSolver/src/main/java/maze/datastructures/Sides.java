@@ -13,7 +13,7 @@ public class Sides {
     * 
     *  Throws IllegalArgumentException if side is not 0, 1, 2 or 3 
     */
-    public static int getIndexOfSide(int side, Square square) {
+    public static int getIndexOfNextSquare(int side, Square square) {
         switch (side) {
             case 0:
                 return square.getUpperSquareIndex();

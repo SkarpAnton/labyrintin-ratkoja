@@ -25,14 +25,18 @@ public class Drawer {
         for (int j = 0; j < sizes.getMazeWidth(); j++) {
             for (int i = 0; i < sizes.getMazeWidth(); i++, indexOfSquare++) {
                 drawUpperWall(graphics, i, j, indexOfSquare);
-                drawLowerWall(graphics, i, j, indexOfSquare);
+                drawLowerWall(graphics, i, j, indexOfSquare, 0);
                 drawLeftWall(graphics, i, j, indexOfSquare);
                 drawRightWall(graphics, i, j, indexOfSquare);
             }
         }
     }
-
-    private void drawLowerWall(Graphics graphics, int x, int y, int indexOfSquare) {
+    
+    /*
+    TODO
+    There is a lot of repetition here, should think of a better way to write this 
+    */
+    private void drawLowerWall(Graphics graphics, int x, int y, int indexOfSquare, int side) {
         if (maze[indexOfSquare].getLeftSide() != TypesOfSides.getHALLWAY()) {
             graphics.drawLine(x * sizes.getSquareWidth(), y * sizes.getSquareWidth(),
                     x * sizes.getSquareWidth(), (y + 1) * sizes.getSquareWidth());
@@ -70,7 +74,7 @@ public class Drawer {
     }
 
     private void drawAstarsPath(Graphics graphics, int start, int destination) {
-        graphics.setColor(Color.RED);
+        graphics.setColor(Color.GREEN);
         int next = destination;
         while (next != start) {
             addMarkPath(graphics, next);
@@ -96,7 +100,6 @@ public class Drawer {
     }
 
     public void drawVisited(Graphics graphics) {
-
         int notVisited = -1;
         for (int i = 0; i < sizes.getAmountOfSquares(); i++) {
             graphics.setColor(Color.CYAN);

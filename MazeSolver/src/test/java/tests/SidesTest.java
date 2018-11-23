@@ -21,10 +21,10 @@ public class SidesTest {
 
     @Test
     public void getSuuntaTest() {
-        assertEquals(1, Sides.getIndexOfSide(0, square));
-        assertEquals(21, Sides.getIndexOfSide(1, square));
-        assertEquals(10, Sides.getIndexOfSide(2, square));
-        assertEquals(12, Sides.getIndexOfSide(3, square));
+        assertEquals(1, Sides.getIndexOfNextSquare(0, square));
+        assertEquals(21, Sides.getIndexOfNextSquare(1, square));
+        assertEquals(10, Sides.getIndexOfNextSquare(2, square));
+        assertEquals(12, Sides.getIndexOfNextSquare(3, square));
     }
 
     @Test

@@ -15,12 +15,13 @@ public class RandomKruskal {
     }
 
     /*
-    * Creates maze based on random kruskal algorithm. Algorithm initializes every 
-    * squares side to be a wall. Kruskal is used to create hallways that connect 
+    * Creates maze based on random kruskal algorithm. Every new square has all 
+    * its sides as walls. Kruskal is used to create hallways that connect 
     * every square by removing walls or equivalently adding hallways between squares. 
     * After kruskal creates a spanning tree of hallways some hallways are added to 
     * create more than one valid shortest path between squares.
-     */
+    * https://en.wikipedia.org/wiki/Maze_generation_algorithm
+    */
     public static Square[] createMaze(int widthOfMaze) {
         initialization(widthOfMaze);
         createSpanningTree();
@@ -52,7 +53,7 @@ public class RandomKruskal {
             int randomSquare = rand.nextInt(amountOfSquares);
             int side = rand.nextInt(4);
             int sideToTheNextSquare = Sides.getTypeOfSide(side, maze[randomSquare]);
-            int indexOfNextSquare = Sides.getIndexOfSide(side, maze[randomSquare]);
+            int indexOfNextSquare = Sides.getIndexOfNextSquare(side, maze[randomSquare]);
             if (sideToTheNextSquare == TypesOfSides.getWALL()) {
                 Sides.setAsHallway(side, maze[randomSquare], maze[indexOfNextSquare]);
                 i++;
@@ -69,7 +70,7 @@ public class RandomKruskal {
             int randomSquare = rand.nextInt(amountOfSquares);
             int side = rand.nextInt(4);
             int sideToTheNextSquare = Sides.getTypeOfSide(side, maze[randomSquare]);
-            int indexOfNextSquare = Sides.getIndexOfSide(side, maze[randomSquare]);
+            int indexOfNextSquare = Sides.getIndexOfNextSquare(side, maze[randomSquare]);
             if (sideToTheNextSquare == TypesOfSides.getWALL()
                     && tree.find(randomSquare) != tree.find(indexOfNextSquare)) {
                 Sides.setAsHallway(side, maze[randomSquare], maze[indexOfNextSquare]);

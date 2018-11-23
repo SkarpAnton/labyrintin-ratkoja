@@ -7,12 +7,10 @@ public class Queue {
     private int tail = 0;
     private final int size;
 
-    /*
-    * Creates queue, parameter amountOfSquares is the maximum size of this queue.
-    */
-    public Queue(int amountOfSquares) {
-        this.queue = new int[amountOfSquares];
-        size = amountOfSquares;
+   
+    public Queue(int sizeOfQueue) {
+        this.queue = new int[sizeOfQueue];
+        size = sizeOfQueue;
     }
 
     public void add(int indexOfSquare) {

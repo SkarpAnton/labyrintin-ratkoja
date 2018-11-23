@@ -5,11 +5,9 @@ public class Heap {
     private ObjectForHeap[] heap;
     private int size = -1;
     
-    /*
-    * Constructs heap, parameter is the maximum size of the heap;
-    */
-    public Heap(int amountOfSquares) {
-        this.heap = new ObjectForHeap[amountOfSquares / 2];
+    
+    public Heap(int sizeOfHeap) {
+        this.heap = new ObjectForHeap[sizeOfHeap / 2];
     }
 
     public void add(ObjectForHeap object) {

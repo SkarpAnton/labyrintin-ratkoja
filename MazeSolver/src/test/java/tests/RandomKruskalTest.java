@@ -13,6 +13,7 @@ public class RandomKruskalTest {
     private final int amountOfSquares = mazeWidth * mazeWidth;
     private final int border = TypesOfSides.getBORDER();
     private final int hallway = TypesOfSides.getHALLWAY();
+    
     public RandomKruskalTest() {
         maze = RandomKruskal.createMaze(mazeWidth);
     }

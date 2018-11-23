@@ -31,7 +31,7 @@ public class SearchAlgorithms {
     private static void bfsCheckSide(Square currentSquare, Square[] maze, int side) {
 
         if (Sides.getTypeOfSide(side, currentSquare) == TypesOfSides.getHALLWAY()) {
-            int next = Sides.getIndexOfSide(side, currentSquare);
+            int next = Sides.getIndexOfNextSquare(side, currentSquare);
             Square nextSquare = maze[next];
             if (nextSquare.getBfsPrevious() == -1) {
                 nextSquare.setBfsPrevious(currentSquare.getIndex());
@@ -65,7 +65,7 @@ public class SearchAlgorithms {
     private static void aStarCheckSide(ObjectForHeap current, Square currentSquare,
             int widthOfMaze, Square[] maze, int destination, int side) {
         if (Sides.getTypeOfSide(side, currentSquare) == TypesOfSides.getHALLWAY()) {
-            int next = Sides.getIndexOfSide(side, currentSquare);
+            int next = Sides.getIndexOfNextSquare(side, currentSquare);
             Square nextSquare = maze[next];
             int priority = relax(next, destination, widthOfMaze, current.getDistance() + 1);
             if (nextSquare.getBestPriority() > priority) {

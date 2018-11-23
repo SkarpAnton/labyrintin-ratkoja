@@ -26,6 +26,30 @@ public class SearchAlgorithmsTest {
     }
     
     @Test
+    public void bfsHasPathFromStartToDestination() {
+        int nextBfs = destination;
+        int i = 0;
+        while(nextBfs != start){
+            Square squareBfs = maze[nextBfs];
+            nextBfs = squareBfs.getBfsPrevious();
+            i++;
+            assertTrue(i < 1000000);
+        }
+    }
+    
+    @Test
+    public void aStarHasPathFromStartToDestination() {
+        int nextAStar = destination;
+        int i = 0;
+        while(nextAStar != start) {
+            Square squareAStar = maze[nextAStar];
+            nextAStar = squareAStar.getAStarPrevious();
+            i++;
+            assertTrue(i < 1000000);
+        }
+    }
+    
+    @Test
     public void bfsAndAstarPathLengthIsTheSame() {
         int nextAStar = destination;
         int nextBfs = destination;

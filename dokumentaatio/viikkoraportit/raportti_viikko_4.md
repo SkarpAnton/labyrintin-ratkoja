@@ -8,3 +8,5 @@ Lisäksi tein kaikenlaista korjailua ja refaktorointia.
 
 Seuraavalla viikolla ajattelin tehdä aikavaativuuksia testaavia testejä ja kirjoitella niihin liittyvää analyysiä. Lisäksi aion lisätä
 merkittävästi testejä. 
+
+10h

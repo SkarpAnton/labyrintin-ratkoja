@@ -94,7 +94,7 @@
                 <configuration>
                     <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
                     <additionalClasspathElements>
-                        <additionalClasspathElement>${java.home}/lib/jfxrt.jar</additionalClasspathElement>
+                        <additionalClasspathElement>${java.home}/jre/lib/ext/jfxrt.jar</additionalClasspathElement>
                     </additionalClasspathElements>
                 </configuration>
             </plugin>

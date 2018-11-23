@@ -1,7 +1,6 @@
 
 package tests;
 
-import java.util.Random;
 import maze.datastructures.Queue;
 import org.junit.Before;
 import org.junit.BeforeClass;

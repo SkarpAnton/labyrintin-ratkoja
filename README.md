@@ -1,4 +1,4 @@
-### Labyrinti ratkoja
+# Labyrinti ratkoja
 
 Tarkoituksena olisi vertailla A* ja leveyshaun aikavaativuutta satunnaisten labyrinttien ratkaisussa. Projekti muodostaa labyrintin, jonka ruuduissa on erivärisiä merkkejä. Sininen merkki merkkaa alkuruutua ja punainen määränpää ruutua. Vihreä merkki merkkaa ruutuja, jotka ovat osa lyhintä polkua alkuruudun ja määränpään välillä, jonka A* tai leveyshaku löysi. Keltainen merkki kuvaa ruutua, jossa molemmat A* ja leveyshaku on käynyt. Magenta merkki kauvaa ruutua, jossa vain leveyshaku on käynyt, vastaavasti syaani kuvaa ruutuja, jossa vain A* on käynyt.
 

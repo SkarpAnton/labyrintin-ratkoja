@@ -14,7 +14,7 @@ public class Printer {
     public static void printMaze(MazeSize sizes) {
         
         RandomStartAndDestination startAndDestination
-                = new RandomStartAndDestination(sizes.getAmountOfSquares(), sizes.getMazeWidth());
+                = new RandomStartAndDestination(sizes.getMazeWidth());
         Drawer drawer = new Drawer(sizes, startAndDestination.getStart(),
                 startAndDestination.getDestination());
         JFrame frame = new JFrame("maze");

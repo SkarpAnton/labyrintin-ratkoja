@@ -12,7 +12,7 @@ public class RandomStartAndDestinationTest {
         int mazeWidth = 100;
         for (int i = 0; i < 10000; i++) {
             RandomStartAndDestination startAndDestination = 
-                    new RandomStartAndDestination(mazeWidth * mazeWidth, mazeWidth);
+                    new RandomStartAndDestination(mazeWidth);
             assertTrue(startAndDestination.getStart() != startAndDestination.getDestination());
         }
     }
@@ -21,7 +21,7 @@ public class RandomStartAndDestinationTest {
          int mazeWidth = 100;
         for (int i = 0; i < 10000; i++) {
             RandomStartAndDestination startAndDestination = 
-                    new RandomStartAndDestination(mazeWidth * mazeWidth, mazeWidth);
+                    new RandomStartAndDestination(mazeWidth);
             int xDiff = Math.abs(startAndDestination.getStart() % mazeWidth -
                     startAndDestination.getDestination() % mazeWidth);
             int yDiff = Math.abs(startAndDestination.getStart() / mazeWidth -

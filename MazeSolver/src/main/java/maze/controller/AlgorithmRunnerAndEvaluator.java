@@ -6,14 +6,14 @@ import maze.algorithms.SearchAlgorithms;
 import maze.datastructures.MazeSize;
 import maze.datastructures.Square;
 
-public class AlgorithmRunnerEvaluator {
+public class AlgorithmRunnerAndEvaluator {
     
     private Square[] maze;
     private final MazeSize sizes;
     private final int start;
     private final int destination;
 
-    public AlgorithmRunnerEvaluator(MazeSize sizes, int start, int destination) {
+    public AlgorithmRunnerAndEvaluator(MazeSize sizes, int start, int destination) {
         this.sizes = sizes;
         this.start = start;
         this.destination = destination;

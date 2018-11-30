@@ -1,7 +1,7 @@
 package maze.userinterface;
 
 import java.awt.*;
-import maze.controller.AlgorithmRunnerEvaluator;
+import maze.controller.AlgorithmRunnerAndEvaluator;
 import maze.datastructures.MazeSize;
 import maze.datastructures.Square;
 import maze.datastructures.TypesOfSides;
@@ -13,7 +13,7 @@ public class Drawer {
 
     public Drawer(MazeSize sizes, int start, int destination) {
         this.sizes = sizes;
-        AlgorithmRunnerEvaluator runnerAndEvaluator = new AlgorithmRunnerEvaluator(sizes,
+        AlgorithmRunnerAndEvaluator runnerAndEvaluator = new AlgorithmRunnerAndEvaluator(sizes,
                 start, destination);
         maze = runnerAndEvaluator.runAndEvaluateAlgorithms();
 
@@ -25,7 +25,7 @@ public class Drawer {
         for (int j = 0; j < sizes.getMazeWidth(); j++) {
             for (int i = 0; i < sizes.getMazeWidth(); i++, indexOfSquare++) {
                 drawUpperWall(graphics, i, j, indexOfSquare);
-                drawLowerWall(graphics, i, j, indexOfSquare, 0);
+                drawLowerWall(graphics, i, j, indexOfSquare);
                 drawLeftWall(graphics, i, j, indexOfSquare);
                 drawRightWall(graphics, i, j, indexOfSquare);
             }
@@ -36,7 +36,7 @@ public class Drawer {
     TODO
     There is a lot of repetition here, should think of a better way to write this 
     */
-    private void drawLowerWall(Graphics graphics, int x, int y, int indexOfSquare, int side) {
+    private void drawLowerWall(Graphics graphics, int x, int y, int indexOfSquare) {
         if (maze[indexOfSquare].getLeftSide() != TypesOfSides.getHALLWAY()) {
             graphics.drawLine(x * sizes.getSquareWidth(), y * sizes.getSquareWidth(),
                     x * sizes.getSquareWidth(), (y + 1) * sizes.getSquareWidth());

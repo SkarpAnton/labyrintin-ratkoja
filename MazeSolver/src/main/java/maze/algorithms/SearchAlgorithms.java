@@ -8,9 +8,12 @@ import maze.datastructures.Heap;
 import maze.datastructures.Sides;
 
 public class SearchAlgorithms {
+    
 
     private static Queue queue;
     private static Heap minHeap;
+    
+    private SearchAlgorithms() {};
 
     public static void breadthFirstSearch(int start, int destination,
             Square[] maze, int widthOfMaze) {

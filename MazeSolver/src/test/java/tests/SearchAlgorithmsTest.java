@@ -18,7 +18,7 @@ public class SearchAlgorithmsTest {
     public SearchAlgorithmsTest() {
         maze = RandomKruskal.createMaze(widthOfMaze);
         RandomStartAndDestination startAndDestination = new 
-            RandomStartAndDestination(widthOfMaze * widthOfMaze, widthOfMaze);
+            RandomStartAndDestination(widthOfMaze);
         start = startAndDestination.getStart();
         destination = startAndDestination.getDestination();
         SearchAlgorithms.breadthFirstSearch(start, destination, maze, widthOfMaze);

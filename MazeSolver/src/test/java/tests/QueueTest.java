@@ -45,5 +45,24 @@ public class QueueTest {
             assertEquals(i, queue.poll());
         }
     }
+    @Test
+    public void tailWrapsAround() {
+        for(int i = 0; i < 1000000; i++) {
+            queue.add(i);
+        }
+        queue.poll();
+        queue.add(6);
+        assertEquals(1, queue.poll());
+    }
+    @Test
+    public void headWrapsAround() {
+        for(int i = 0; i < 1000005; i++) {
+            queue.add(i);
+        }
+        for(int i = 0; i < 1000004; i++) {
+            queue.poll();
+        }
+        assertEquals(1000004, queue.poll());
+    }
     
 }

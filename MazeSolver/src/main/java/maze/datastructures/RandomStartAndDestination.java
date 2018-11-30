@@ -7,7 +7,8 @@ public final class RandomStartAndDestination {
     private int start;
     private int destination;
 
-    public RandomStartAndDestination(int amountOfSquares, int widthOfMaze) {
+    public RandomStartAndDestination(int widthOfMaze) {
+        int amountOfSquares = widthOfMaze * widthOfMaze;
         Random rand = new Random();
         start = rand.nextInt(amountOfSquares);
         destination = rand.nextInt(amountOfSquares);

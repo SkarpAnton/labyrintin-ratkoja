@@ -1,7 +1,11 @@
 # Testaus
 
-Aikavaativuuksien testaus on hyvin kesken tällä hetkellä. Suorituksen aikana ohjelmani mittaa suoritetun ajan Kruskalilta, A*:lta
-ja leveyshaulta. Olen käyttänyt aikoja tarkistaakseni, että A* toimii järkevästi ja hahmottaakseni suunnilleen algoritmien aikavaativuudet.
-A* on huomattavasti nopeampi yleensä, kun labyrintti on kohtuullisen iso ruutujen (määrä > 250 000), mikä kuulostaakin järkevältä.
-Ajatuksena olisi seuraavalla viikolla testata algoritmeja systemaattisemmin, jolloin voisin kirjat jotain suhteellisen vakuuttavia 
-tuloksia tänne. 
+Testikattavuus alkaa olla aika hyvä algoritmien ja tietorakenteiden suhteen. En varmaan automaattisesti testaa ui:ta vaikka varmaan hyvä sellainenkin olisi toteuttaa. Ui:ta olen tosin testannut jonkin verran manuaalisesti.
+
+[Testikattavuus](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/Testikattavuus.png)
+
+Hiukan aikavaativuuksien testausta algotritmeille. Testasin aluksi 10 kertaa algoritmeja tietyllä solmumäärällä ja otin keskiarvon niistä. Sitten lisäsin solmujen määrää ja tein mittaukset uudestaan. A* oli nopein, mutta leveyshaku ei ollut pahasti jäljessä nopeudessa. Kruskal oli tosin verrattaen todella hidas.
+
+[A* vs Leveyshaku](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/AStarVsBFS.png)
+[Kruskal vs A* vs leveyshaku](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/KruskalVsAStarVsBFS.png)
+

@@ -6,7 +6,7 @@ public class TypesOfSides {
     private static final int BORDER = -1;
     private static final int WALL = 1;
     
-    private TypesOfSides () {}
+    private TypesOfSides() {}
 
     public static int getHALLWAY() {
         return HALLWAY;

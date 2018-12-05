@@ -2,7 +2,7 @@
 
 ## Testikattavuus
 
-Testikattavuus alkaa olla aika hyvä algoritmien ja tietorakenteiden suhteen. En tehnyt automaattisia testejä UI:lle, vaikka varmasti hyvä olisi sellaisetkin topteuttaa. Olen tosin toki testannut UI:ta manuaalisesti.
+Testikattavuus alkaa olla aika hyvä algoritmien ja tietorakenteiden suhteen. En tehnyt automaattisia testejä UI:lle, vaikka varmasti hyvä olisi sellaisetkin toteuttaa. Olen tosin toki testannut UI:ta manuaalisesti.
 
 ![Testikattavuus](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/Testikattavuus.png)
 
@@ -24,13 +24,13 @@ heuristiikka funktiona. A* pitäisi olla nopeampi kuin leveyshaku.
 
 ![A* vs Leveyshaku](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/AStarVsBFS.png)
 
-Levyshaun implementaationi on aika klassinen, joten aikavaativuus luultavasti pätee. Testaus tukee päätelmää. 
+Leveyshaun implementaationi on aika klassinen, joten aikavaativuus luultavasti pätee. Testaus tukee päätelmää. 
 
 Testaus näyttäisi tukevan oletustani, että A* on nopeampi kuin leveyshaku.
 
 ![Kruskal vs A* vs leveyshaku](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/KruskalVsAStarVsBFS.png)
 
-Selvästi satunnainen Kruskal on ylivoimaisesti hitain algoritmeista. Epäilen, että toteutukseni ei saavuta algoritmin teoreettista  aikavaativutta O(20 * ruutujen määrä).
+Selvästi satunnainen Kruskal on ylivoimaisesti hitain algoritmeista. Epäilen, että toteutukseni ei saavuta algoritmin teoreettista  aikavaativuutta O(20 * ruutujen määrä).
 
 
 

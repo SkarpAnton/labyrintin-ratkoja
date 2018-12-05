@@ -35,5 +35,6 @@ Ohjelma muodostaa kuvan labyrintista, jonka huoneet on merkattu eri värisillä 
 
 
 Tietorakenteet ja algoritmit luentomateriaali, kevät 2018, Jyrki Kivinen
-[Kruskalin algoritmi](https://en.wikipedia.org/wiki/Maze_generation_algorithm)
+
+[Kruskalin algoritmi Wikipedia](https://en.wikipedia.org/wiki/Maze_generation_algorithm)
 

@@ -1,6 +1,6 @@
 # Testaus
 
-Testikattavuus alkaa olla aika hyvä algoritmien ja tietorakenteiden suhteen. En varmaan automaattisesti testaa ui:ta vaikka varmaan hyvä sellainenkin olisi toteuttaa. Ui:ta olen tosin testannut jonkin verran manuaalisesti.
+Testikattavuus alkaa olla aika hyvä algoritmien ja tietorakenteiden suhteen. En tehnyt automaattisia testejä UI:lle, vaikka varmasti hyvä olisi sellaisetkin topteuttaa. Olen tosin toki testannut UI:ta manuaalisesti.
 
 ![Testikattavuus](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/Testikattavuus.png)
 

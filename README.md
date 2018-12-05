@@ -40,7 +40,7 @@ Komento
 mvn package
 ```
 
-generoi hakemistoon _target_ suoritettavan jar-tiedoston _MazeSolver-1.0-SNAPSHOT.jar_
+generoi hakemistoon _target_ suoritettavan jar-tiedoston _MazeSolver-1.0-SNAPSHOT-shaded.jar_
 
 ### JavaDoc
 

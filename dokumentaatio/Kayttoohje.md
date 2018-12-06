@@ -1,6 +1,6 @@
 # Käyttöohje
 
-## Komentorivitoiminnot (muokattu versio ohjelmistotekniikan esimerkki projektista)
+## Komentorivitoiminnot
 
 ### Alustus
 
@@ -70,3 +70,7 @@ Tiedostoon [checkstyle.xml](https://github.com/mluukkai/OtmTodoApp/blob/master/c
 ```
 
 Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto _target/site/checkstyle.html_
+
+## Lähteet
+
+Paljolti kopioitu ohjelmistotekniikan esimerkki projektista

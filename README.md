@@ -12,7 +12,7 @@ Tarkoituksena olisi vertailla A* ja leveyshaun aikavaativuutta satunnaisten laby
 
 [Testausdokumentti](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/testausdokumentti.md)
 
-[Käyttöohje](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/Kayttohje.md)
+[Käyttöohje](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/Kayttoohje.md)
 
 
 . 

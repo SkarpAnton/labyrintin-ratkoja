@@ -30,7 +30,7 @@ Esimerkiksi
 ```
 javac -jar target/MazeSolver-1.0-SNAPSHOT-shaded.jar 100 1000
 ```
-loisi labyrintin, jossa yhdellä sivulla on huonetta 100 ja kyseisestä labyrintista kuvan, jonka koko on 1000 * 1000 pikseliä.
+loisi labyrintin, jossa yhdellä sivulla on huoneita 100 kpl ja kyseisestä labyrintista kuvan, jonka koko on 1000 * 1000 pikseliä.
 Vaihtoehtoisesti koot voi syottää suorituksen aikana.
 
 ### Testaus

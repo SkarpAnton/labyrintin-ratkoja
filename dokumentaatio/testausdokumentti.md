@@ -22,12 +22,17 @@ heuristiikka funktiona. A* pitäisi olla yleensä nopeampi kuin leveyshaku.
 ### Aikavaativuuksien kokeellinen arviointi
 
 
-![A* vs Leveyshaku](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/AStarVsBFS.png)
+![Leveyshaku](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/Leveyshaku.png)
+![A*](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/AStar.png)
+![A* vs Leveyshaku](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/AStar_vs_Leveyshaku.png)
+![Kaydyt huoneet](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/K%C3%A4ydyt%20huoneet.png)
+![Kruskal](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/AStar.png)
+![O(n^2) vs Kruskal](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/AStar_vs_Leveyshaku.png)
 Testaus tukee päätelmää. 
 
 Testaus näyttäisi tukevan oletustani, että A* on nopeampi kuin leveyshaku.
 
-![Kruskal vs A* vs leveyshaku](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/KruskalVsAStarVsBFS.png)
+![Kruskal vs A* vs leveyshaku](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/SatunnainenKruskal_vs_AStar_vs_Leveyshaku.png)
 
 Selvästi satunnainen Kruskal on ylivoimaisesti hitain algoritmeista. Epäilen, että toteutukseni ei saavuta algoritmin teoreettista  aikavaativuutta O(20 * ruutujen määrä).
 

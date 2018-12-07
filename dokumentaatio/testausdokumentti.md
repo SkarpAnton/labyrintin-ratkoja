@@ -73,7 +73,7 @@ Aikaero tulee selvästi siitä, että A* käy yksinkertaisesti vähemmässä mä
 
 ![Kruskal](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/Kruskal.png)
 
-Kruskalin toteutukseni näyttäisi olevan suhteellisen hidas. AAlgoritmi on merkittävästi hitaampi, kuin triviaali O(nlon) algoritmi. 
+Kruskalin toteutukseni näyttäisi olevan suhteellisen hidas. Algoritmi on merkittävästi hitaampi, kuin triviaali O(nlon) algoritmi. 
 
 #### Kruskal vs A* vs leveyshaku
 
@@ -85,7 +85,7 @@ Kruskalin algoritmi on selvästi ohjelmani pullonkaula.
 
 ![O(n^2) vs Kruskal](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/O(n%5E2)_vs_Kruskal.png)
 
-Vaikka Kruskal vaikuttaa hitaalta niin on se silti merkittävästi tehokkaampi, kuin O(n^2) algoritmi., Huone määrä on testissä paljon pienempi, koska testien suorittaminen alkoi kestää liian kauan suuremilla huone määrillä.
+Vaikka Kruskal vaikuttaa hitaalta niin on se silti merkittävästi tehokkaampi, kuin O(n^2) algoritmi. Huone määrä on testissä paljon pienempi, koska testien suorittaminen alkoi kestää liian kauan suuremilla huone määrillä.
 
 
 

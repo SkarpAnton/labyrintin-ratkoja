@@ -83,11 +83,9 @@ Käytetty koodi:
 ![O(n^2) vs Kruskal](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/O(n%5E2)_vs_Kruskal.png)
 Testaus tukee päätelmää. 
 
-Testaus näyttäisi tukevan oletustani, että A* on nopeampi kuin leveyshaku.
 
 ![Kruskal vs A* vs leveyshaku](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/SatunnainenKruskal_vs_AStar_vs_Leveyshaku.png)
 
-Selvästi satunnainen Kruskal on ylivoimaisesti hitain algoritmeista. Epäilen, että toteutukseni ei saavuta algoritmin teoreettista  aikavaativuutta O(20 * ruutujen määrä).
 
 
 

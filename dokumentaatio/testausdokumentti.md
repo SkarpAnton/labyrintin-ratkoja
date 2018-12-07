@@ -19,72 +19,81 @@ A* teoreettisen aikavaativuuden määrittely on kohtuu hankalaa, sillä se riipp
 (|yDestination - yCurrent| + |xDestination - xCurrent|)
 heuristiikka funktiona. A* pitäisi olla yleensä nopeampi kuin leveyshaku.
 
+A* on riippuvainen keon lisäys ja posto operaatioista. Toteutukseni toimenpiteistä pitäisi olla aikavaativuudeltaan O(logn).
+
 ## Aikavaativuuksien kokeellinen arviointi
+
+### Välineistö
+
+Testit ajettiin seuraavanlaisella koneella:
+Käyttöjärjestelmä: Windows 10 Home
+CPU: i5-4690k
+GPU: NVIDIA GeForce GTX 980
+Ram: 16 gb
+
+Taustalla oli luultavasti erinäisiä ohjelmia.
 
 ### Testien suoritus
 
-#### ALgoritmien suorituksen mittaus
 
 Algoritmeja testatiin eri huone määrillä. Huoneiden määrät määräytyivät huoneiden leveyden kautta. Huoneiden leveydet alkoivat sadasta ja loppuivat 3900 ja mittauksia otettiin 100 intervalleilla, täten huoneiden määrä on välillä [100, 15120000]. Jokaisella huone määrällä algoritmeja ajettin kymmenen kertaa, joista jokainen mitattiin yksilöllisesti. Ajoista otettiin keskiarvo, joita sitten käytin vertailussa. Ajat mitattiin sekunneissa.
 
-Käytetty koodi:
-      
-      //Other stuff
-            for (mazeWidth = 100; mazeWidth < 4000; mazeWidth += 100) {
+Mittasin lisäksi vertalukohdaksi triviaalit O(n), O(nlogn) ja O(n^2) algoritmit.
 
-               arrayofTimes = new AlgorithmTimes[10];
-               for (int j = 0; j < 10; j++) {
-                    times = new AlgorithmTimes();
-                    RandomStartAndDestination randomStartAndDestination
-                            = new RandomStartAndDestination(mazeWidth);
-                    start = randomStartAndDestination.getStart();
-                    destination = randomStartAndDestination.getDestination();
-                    timeRandomKruskal();
-                    timeAStar();
-                    timeBfs();
-                    arrayofTimes[j] = times;
-                }
-
-                writeTimesToFile();
-            }
-      //Other Stuff      
-            
-    private static void timeRandomKruskal() {
-        long startTime = System.nanoTime();
-        maze = RandomKruskal.createMaze(mazeWidth);
-        long endTime = System.nanoTime();
-        times.setKruskalTime((endTime - startTime) / 1000000000.0);
-    }
-
-    private static void timeAStar() {
-        long startTime = System.nanoTime();
-        SearchAlgorithms.aStar(start, destination, maze, mazeWidth);
-        long endTime = System.nanoTime();
-        times.setaStarTime((endTime - startTime) / 1000000000.0);
-
-    }
-
-    private static void timeBfs() {
-        long startTime = System.nanoTime();
-        SearchAlgorithms.breadthFirstSearch(start, destination, maze, mazeWidth);
-        long endTime = System.nanoTime();
-        times.setBfsTime((endTime - startTime) / 1000000000.0);
-    }
-
-
+Käytetty koodi: [suorituskykytestaus](https://github.com/SkarpAnton/labyrintin-ratkoja/tree/master/MazeSolver/src/test/java/tests/performance)
 
 
 ### Testien tulokset
-![Leveyshaku](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/Leveyshaku.png)
-![A*](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/AStar.png)
-![A* vs Leveyshaku](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/AStar_vs_Leveyshaku.png)
-![Kaydyt huoneet](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/K%C3%A4ydyt_huoneet.png)
-![Kruskal](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/Kruskal.png)
-![O(n^2) vs Kruskal](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/O(n%5E2)_vs_Kruskal.png)
-Testaus tukee päätelmää. 
 
+Raaka data: [suoritus ajat](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/suoritusajat.md)
+
+#### Leveyshaku
+
+![Leveyshaku](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/Leveyshaku.png)
+
+Leveyshaku näyttäisi olevan suurusluokaltaan teoreettisten aikavaativuuksien mukaisia.
+
+#### A*
+
+![A*](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/AStar.png)
+
+A* nopeus lähestyy vertailukohteena käyettyä triviaalia O(n) algoritmia.
+
+#### A* vs leveyshaku
+
+![A* vs Leveyshaku](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/AStar_vs_Leveyshaku.png)
+
+Testit tukevat oletusta, että A* on nopeampi kuin leveyshaku. 
+
+![Kaydyt huoneet](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/K%C3%A4ydyt_huoneet.png)
+
+Aikaero tulee selvästi siitä, että A* käy yksinkertaisesti vähemmässä määrässä huoneita.
+
+#### Kruskal
+
+![Kruskal](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/Kruskal.png)
+
+Kruskalin toteutukseni näyttäisi olevan suhteellisen hidas. AAlgoritmi on merkittävästi hitaampi, kuin triviaali O(nlon) algoritmi. 
+
+#### Kruskal vs A* vs leveyshaku
 
 ![Kruskal vs A* vs leveyshaku](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/SatunnainenKruskal_vs_AStar_vs_Leveyshaku.png)
+
+Kruskalin algoritmi on selvästi ohjelmani pullonkaula.
+
+#### Kruskal vs O(n^2)
+
+![O(n^2) vs Kruskal](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/O(n%5E2)_vs_Kruskal.png)
+
+Vaikka Kruskal vaikuttaa hitaalta niin on se silti merkittävästi tehokkaampi, kuin O(n^2) algoritmi., Huone määrä on testissä paljon pienempi, koska testien suorittaminen alkoi kestää liian kauan suuremilla huone määrillä.
+
+
+
+
+
+
+
+
 
 
 

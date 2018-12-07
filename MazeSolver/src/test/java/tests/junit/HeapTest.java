@@ -1,5 +1,5 @@
 
-package tests;
+package tests.junit;
 
 import java.util.Random;
 import maze.datastructures.Heap;

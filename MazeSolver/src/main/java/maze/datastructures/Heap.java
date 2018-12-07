@@ -2,14 +2,14 @@ package maze.datastructures;
 
 public class Heap {
 
-    private ObjectForHeap[] heap;
+    private final ObjectForHeap[] heap;
     private int size = -1;
     
     
     public Heap(int sizeOfHeap) {
         this.heap = new ObjectForHeap[sizeOfHeap / 2];
     }
-
+    
     public void add(ObjectForHeap object) {
         size++;    
         int index = size;
@@ -23,32 +23,32 @@ public class Heap {
     public ObjectForHeap poll() {
         ObjectForHeap min = heap[0];
         heap[0] = heap[size];
-        heapify(0);
         size--;
+        heapify(0);       
         return min;
     }
 
     private int parent(int index) {
-        return index / 2;
+        return (index - 1) / 2;
     }
 
     private int left(int index) {
-        return 2 * index;
+        return 2 * index + 1;
     }
 
     private int right(int index) {
-        return 2 * index + 1;
+        return 2 * index + 2;
     }
 
     private void heapify(int index) {
         int left = left(index);
         int right = right(index);
-        if (right >= size && left >= size) {
+        if (left > size) {
             return;
         }
-        int smallest = right;
-        if (heap[left].compareTo(heap[right])) {
-            smallest = left;
+        int smallest = left;
+        if (right <= size && heap[right].compareTo(heap[left])) {
+            smallest = right;
         }
         if (heap[index].compareTo(heap[smallest])) {
             smallest = index;
@@ -61,8 +61,7 @@ public class Heap {
 
     private void swap(ObjectForHeap first, ObjectForHeap second,
             int firstIndex, int secondIndex) {
-        ObjectForHeap copyOfFirst = new ObjectForHeap(first.getIndexOfSquare(),
-                first.getPriority(), first.getPrevious(), first.getDistance());
+        ObjectForHeap copyOfFirst = first;
         heap[firstIndex] = second;
         heap[secondIndex] = copyOfFirst;
     }

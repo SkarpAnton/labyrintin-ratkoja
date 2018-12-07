@@ -1,4 +1,4 @@
-package tests;
+package tests.junit;
 
 import maze.datastructures.RandomStartAndDestination;
 import org.junit.Test;

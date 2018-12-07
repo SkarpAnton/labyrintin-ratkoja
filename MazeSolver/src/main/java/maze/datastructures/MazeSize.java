@@ -2,31 +2,32 @@
 package maze.datastructures;
 
 public class MazeSize {
-    private int squareWidth;
+    private int roomWidth;
     private final int mazeWidth;
     private final int amountOfSquares;
-    private final int frameWidth = 1000;
+    private final int frameWidth;
     private final int widthOfPathMark;
 
-    public MazeSize(int mazeWidth) {
+    public MazeSize(int mazeWidth, int frameWidth) {
         this.mazeWidth = mazeWidth;
         amountOfSquares = mazeWidth * mazeWidth;
-        squareWidth = frameWidth / mazeWidth;
-        if (squareWidth < 2) {
-            squareWidth = 2;
+        this.frameWidth = frameWidth;
+        roomWidth = frameWidth / mazeWidth;
+        if (roomWidth < 2) {
+            roomWidth = 2;
         }
-        widthOfPathMark = squareWidth / 2;
+        widthOfPathMark = roomWidth / 2;
     }
 
-    public int getSquareWidth() {
-        return squareWidth;
+    public int getRoomWidth() {
+        return roomWidth;
     }
 
     public int getMazeWidth() {
         return mazeWidth;
     }
 
-    public int getAmountOfSquares() {
+    public int getAmountOfRooms() {
         return amountOfSquares;
     }
 

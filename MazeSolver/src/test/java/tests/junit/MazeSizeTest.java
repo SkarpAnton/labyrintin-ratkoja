@@ -1,5 +1,5 @@
 
-package tests;
+package tests.junit;
 
 import maze.datastructures.MazeSize;
 import org.junit.Before;
@@ -11,16 +11,17 @@ import static org.junit.Assert.*;
 public class MazeSizeTest {
 
     int mazeWidth = 100;
+    int frameWidth = 1000;
     MazeSize mazeSize;
 
     @Before
     public void setUp() {
-        mazeSize = new MazeSize(mazeWidth);
+        mazeSize = new MazeSize(mazeWidth, frameWidth);
     }
 
     @Test
     public void getFrameWidthTest() {
-        assertEquals(1000, mazeSize.getFrameWidth());
+        assertEquals(frameWidth, mazeSize.getFrameWidth());
     }
 
     @Test
@@ -29,26 +30,26 @@ public class MazeSizeTest {
     }
 
     @Test
-    public void getSquareWidthTestSmallMaze() {
+    public void getRoomWidthTestSmallMaze() {
         assertEquals(mazeSize.getFrameWidth() / mazeSize.getMazeWidth(),
-                mazeSize.getSquareWidth());
+                mazeSize.getRoomWidth());
     }
 
     @Test
-    public void getSquareWidthTestBigMaze() {
-        mazeSize = new MazeSize(1000);
-        assertEquals(2, mazeSize.getSquareWidth());
+    public void getRoomWidthTestBigMaze() {
+        mazeSize = new MazeSize(1000, frameWidth);
+        assertEquals(2, mazeSize.getRoomWidth());
     }
 
     @Test
-    public void getAmountOfSquaresTest() {
+    public void getAmountOfRoomsTest() {
         assertEquals(mazeSize.getMazeWidth() * mazeSize.getMazeWidth(),
-                mazeSize.getAmountOfSquares());
+                mazeSize.getAmountOfRooms());
     }
 
     @Test
     public void getWidthOfPathMarkerTest() {
-        assertEquals(mazeSize.getSquareWidth() / 2, mazeSize.getWidthOfPathMark());
+        assertEquals(mazeSize.getRoomWidth() / 2, mazeSize.getWidthOfPathMark());
     }
 
 }

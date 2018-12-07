@@ -4,11 +4,11 @@ package maze.controller;
 import maze.algorithms.RandomKruskal;
 import maze.algorithms.SearchAlgorithms;
 import maze.datastructures.MazeSize;
-import maze.datastructures.Square;
+import maze.datastructures.Room;
 
 public class AlgorithmRunnerAndEvaluator {
     
-    private Square[] maze;
+    private Room[] maze;
     private final MazeSize sizes;
     private final int start;
     private final int destination;
@@ -19,8 +19,12 @@ public class AlgorithmRunnerAndEvaluator {
         this.destination = destination;
     }
 
-    
-    public Square[] runAndEvaluateAlgorithms() {
+    /**
+     * Runs and times the labyrinth creation by randomized Kruskal, also runs and times
+     * shortest path finding by BFS and A*.
+     * @return 
+     */
+    public Room[] runAndEvaluateAlgorithms() {
         runAndEvaluateRandomKruskal();
         runAndEvaluateAStar();
         runAndEvaluateBfs();

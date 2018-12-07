@@ -9,8 +9,7 @@ import maze.userinterface.Printer;
 public class Main {
 
     public static void main(String[] args) {
-        int mazeWidth = Input.getWidthOfMaze();
-        MazeSize sizes = new MazeSize(mazeWidth);
+        MazeSize sizes = Input.getMazeSizes(args);
         Printer.printMaze(sizes);       
     }
 }

@@ -13,8 +13,8 @@ public class Queue {
         size = sizeOfQueue;
     }
 
-    public void add(int indexOfSquare) {
-        queue[tail] = indexOfSquare;
+    public void add(int indexOfRoom) {
+        queue[tail] = indexOfRoom;
         tail++;
         if (tail == size) {
             tail = 0;

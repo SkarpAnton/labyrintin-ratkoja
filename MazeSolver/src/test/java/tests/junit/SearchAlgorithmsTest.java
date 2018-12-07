@@ -1,7 +1,7 @@
-package tests;
+package tests.junit;
 
 import maze.algorithms.SearchAlgorithms;
-import maze.datastructures.Square;
+import maze.datastructures.Room;
 import maze.algorithms.RandomKruskal;
 import maze.datastructures.RandomStartAndDestination;
 import maze.datastructures.TypesOfSides;
@@ -13,7 +13,7 @@ public class SearchAlgorithmsTest {
     private final int start;
     private final int destination;
     private final int widthOfMaze = 1000;
-    private final Square[] maze;
+    private final Room[] maze;
     
     public SearchAlgorithmsTest() {
         maze = RandomKruskal.createMaze(widthOfMaze);
@@ -30,8 +30,8 @@ public class SearchAlgorithmsTest {
         int nextBfs = destination;
         int i = 0;
         while(nextBfs != start){
-            Square squareBfs = maze[nextBfs];
-            nextBfs = squareBfs.getBfsPrevious();
+            Room roomBfs = maze[nextBfs];
+            nextBfs = roomBfs.getBfsPrevious();
             i++;
             assertTrue(i < 1000000);
         }
@@ -42,8 +42,8 @@ public class SearchAlgorithmsTest {
         int nextAStar = destination;
         int i = 0;
         while(nextAStar != start) {
-            Square squareAStar = maze[nextAStar];
-            nextAStar = squareAStar.getAStarPrevious();
+            Room roomAStar = maze[nextAStar];
+            nextAStar = roomAStar.getAStarPrevious();
             i++;
             assertTrue(i < 1000000);
         }
@@ -54,10 +54,10 @@ public class SearchAlgorithmsTest {
         int nextAStar = destination;
         int nextBfs = destination;
         while(nextAStar != start || nextBfs != start){
-            Square squareBfs = maze[nextBfs];
-            Square squareAStar = maze[nextAStar];
-            nextAStar = squareAStar.getAStarPrevious();
-            nextBfs = squareBfs.getBfsPrevious();
+            Room roomBfs = maze[nextBfs];
+            Room roomAStar = maze[nextAStar];
+            nextAStar = roomAStar.getAStarPrevious();
+            nextBfs = roomBfs.getBfsPrevious();
         }
         assertEquals(start, nextAStar );
         assertEquals(start, nextBfs);
@@ -67,20 +67,20 @@ public class SearchAlgorithmsTest {
     public void bfsDoesNotGoOverWalls() {
         int current = destination;
         while(current != start){
-            Square square = maze[current];
+            Room room = maze[current];
             int old = current;
-            current = square.getBfsPrevious();
+            current = room.getBfsPrevious();
             if(current - old == -widthOfMaze) {
-                assertTrue(square.getUpperSide() == TypesOfSides.getHALLWAY());
+                assertTrue(room.getUpperSide() == TypesOfSides.getHALLWAY());
             }
             if(current - old == widthOfMaze) {
-                assertTrue(square.getLowerSide() == TypesOfSides.getHALLWAY());
+                assertTrue(room.getLowerSide() == TypesOfSides.getHALLWAY());
             }
             if(current - old == 1) {
-                assertTrue(square.getRightSide() == TypesOfSides.getHALLWAY());
+                assertTrue(room.getRightSide() == TypesOfSides.getHALLWAY());
             }
             if(current - old == -1) {
-                assertTrue(square.getLeftSide() == TypesOfSides.getHALLWAY());
+                assertTrue(room.getLeftSide() == TypesOfSides.getHALLWAY());
             }
         }
     }
@@ -89,20 +89,20 @@ public class SearchAlgorithmsTest {
     public void AStarDoesNotGoOverWalls() {
         int current = destination;
         while(current != start){
-            Square square = maze[current];
+            Room room = maze[current];
             int old = current;
-            current = square.getAStarPrevious();
+            current = room.getAStarPrevious();
             if(current - old == -widthOfMaze) {
-                assertTrue(square.getUpperSide() == TypesOfSides.getHALLWAY());
+                assertTrue(room.getUpperSide() == TypesOfSides.getHALLWAY());
             }
             if(current - old == widthOfMaze) {
-                assertTrue(square.getLowerSide() == TypesOfSides.getHALLWAY());
+                assertTrue(room.getLowerSide() == TypesOfSides.getHALLWAY());
             }
             if(current - old == 1) {
-                assertTrue(square.getRightSide() == TypesOfSides.getHALLWAY());
+                assertTrue(room.getRightSide() == TypesOfSides.getHALLWAY());
             }
             if(current - old == -1) {
-                assertTrue(square.getLeftSide() == TypesOfSides.getHALLWAY());
+                assertTrue(room.getLeftSide() == TypesOfSides.getHALLWAY());
             }
         }
     }

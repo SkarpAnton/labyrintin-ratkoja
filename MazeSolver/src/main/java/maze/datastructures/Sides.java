@@ -6,78 +6,83 @@ public class Sides {
     private Sides() {
     }
     
-    /*
-    * ´Side's value 0 returns the upper square's index, with value 1 returns the 
-    *  lower square's index, value 2 return the left square's index, value 3
-    *  returns the right square's index. 
+    /**
+    * ´Side's value 0 returns the upper room's index, with value 1 returns the 
+    *  lower room's index, value 2 return the left room's index, value 3
+    *  returns the right room's index. 
     * 
     *  Throws IllegalArgumentException if side is not 0, 1, 2 or 3 
+     * @param side
+     * @param room
     */
-    public static int getIndexOfNextSquare(int side, Square square) {
+    public static int getIndexOfNextRoom(int side, Room room) {
         switch (side) {
             case 0:
-                return square.getUpperSquareIndex();
+                return room.getUpperRoomIndex();
             case 1:
-                return square.getLowerSquareIndex();
+                return room.getLowerRoomIndex();
             case 2:
-                return square.getLeftSquareIndex();
+                return room.getLeftRoomIndex();
             case 3: 
-                return square.getRightSquareIndex();
+                return room.getRightRoomIndex();
         }
         throw new IllegalArgumentException(side + " is not 0, 1, 2 or 3");
     }
     
-    public static int getTypeOfSide(int side, Square square) {
+    public static int getTypeOfSide(int side, Room room) {
         switch (side) {
             case 0:
-                return square.getUpperSide();
+                return room.getUpperSide();
             case 1:
-                return square.getLowerSide();
+                return room.getLowerSide();
             case 2:
-                return square.getLeftSide();
+                return room.getLeftSide();
             case 3: 
-                return square.getRightSide();
+                return room.getRightSide();
         }
         throw new IllegalArgumentException(side + " is not 0, 1, 2 or 3");
     }
-    /*
-    * Sets hallway between two squares that are next to each other. 
-    * Parameter side is used to set the hallway on current squares coresponding side
-    * and side is used on the next square to set the opposite of the corresponding 
+    /**
+    * Sets hallway between two rooms that are next to each other. 
+    * Parameter side is used to set the hallway on current rooms corresponding side
+    * and side is used on the next room to set the opposite of the corresponding 
     * side to hallway
+     * @param side
+     * @param current
+     * @param next
     */
-    public static void setAsHallway(int side, Square current, Square next) {
+    public static void setAsHallway(int side, Room current, Room next) {
         setThisAsHallway(side, current);
         setOppositeAsHallway(side, next);
     }
     
-    private static void setThisAsHallway(int side, Square square) {
+    private static void setThisAsHallway(int side, Room room) {
         switch (side) {
             case 0:
-                square.setUpperSide(TypesOfSides.getHALLWAY());
+                room.setUpperSide(TypesOfSides.getHALLWAY());
                 return;
             case 1:
-                square.setLowerSide(TypesOfSides.getHALLWAY());
+                room.setLowerSide(TypesOfSides.getHALLWAY());
                 return;
             case 2:
-                square.setLeftSide(TypesOfSides.getHALLWAY());
+                room.setLeftSide(TypesOfSides.getHALLWAY());
                 return;
         }
-        square.setRightSide(TypesOfSides.getHALLWAY());
+        room.setRightSide(TypesOfSides.getHALLWAY());
     }
 
-    private static void setOppositeAsHallway(int side, Square square) {
+    private static void setOppositeAsHallway(int side, Room room) {
         switch (side) {
             case 0:
-                square.setLowerSide(TypesOfSides.getHALLWAY());
+                room.setLowerSide(TypesOfSides.getHALLWAY());
                 return;
             case 1:
-                square.setUpperSide(TypesOfSides.getHALLWAY());
+                room.setUpperSide(TypesOfSides.getHALLWAY());
                 return;
             case 2:
-                square.setRightSide(TypesOfSides.getHALLWAY());
+                room.setRightSide(TypesOfSides.getHALLWAY());
                 return;
         }
-        square.setLeftSide(TypesOfSides.getHALLWAY());
+        room.setLeftSide(TypesOfSides.getHALLWAY());
     }
 }

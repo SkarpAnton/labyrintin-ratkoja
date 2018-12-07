@@ -1,12 +1,12 @@
 package maze.datastructures;
 
-public class Square {
+public class Room {
     
     private final int index;
-    private final int lowerSquareIndex;
-    private final int upperSquareIndex;
-    private final int rightSquareIndex;
-    private final int leftSquareIndex;
+    private final int lowerRoomIndex;
+    private final int upperRoomIndex;
+    private final int rightRoomIndex;
+    private final int leftRoomIndex;
     private int leftSide = TypesOfSides.getWALL();
     private int rightSide = TypesOfSides.getWALL();
     private int upperSide = TypesOfSides.getWALL();
@@ -16,12 +16,12 @@ public class Square {
     private double bestPriority = 100000000;
 
 
-    public Square(int index, int widthOfMaze) {
+    public Room(int index, int widthOfMaze) {
         this.index = index;
-        lowerSquareIndex = index + widthOfMaze;
-        upperSquareIndex = index - widthOfMaze;
-        rightSquareIndex = index + 1;
-        leftSquareIndex = index - 1;
+        lowerRoomIndex = index + widthOfMaze;
+        upperRoomIndex = index - widthOfMaze;
+        rightRoomIndex = index + 1;
+        leftRoomIndex = index - 1;
     }
     
 
@@ -85,20 +85,20 @@ public class Square {
         return index;
     }
 
-    public int getLowerSquareIndex() {
-        return lowerSquareIndex;
+    public int getLowerRoomIndex() {
+        return lowerRoomIndex;
     }
 
-    public int getUpperSquareIndex() {
-        return upperSquareIndex;
+    public int getUpperRoomIndex() {
+        return upperRoomIndex;
     }
 
-    public int getRightSquareIndex() {
-        return rightSquareIndex;
+    public int getRightRoomIndex() {
+        return rightRoomIndex;
     }
 
-    public int getLeftSquareIndex() {
-        return leftSquareIndex;
+    public int getLeftRoomIndex() {
+        return leftRoomIndex;
     }
 
     public int getaStarPrevious() {

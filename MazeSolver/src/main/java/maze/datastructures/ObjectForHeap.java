@@ -2,13 +2,13 @@ package maze.datastructures;
 
 public class ObjectForHeap {
 
-    private int indexOfSquare;
+    private int indexOfRoom;
     private int priority;
     private int previous;
     private int distance;
 
-    public ObjectForHeap(int indexOfSquare, int priority, int previous, int distance) {
-        this.indexOfSquare = indexOfSquare;
+    public ObjectForHeap(int indexOfRoom, int priority, int previous, int distance) {
+        this.indexOfRoom = indexOfRoom;
         this.priority = priority;
         this.previous = previous;
         this.distance = distance;
@@ -19,8 +19,8 @@ public class ObjectForHeap {
         return previous;
     }
 
-    public int getIndexOfSquare() {
-        return indexOfSquare;
+    public int getIndexOfRoom() {
+        return indexOfRoom;
     }
 
     public int getPriority() {
@@ -31,8 +31,8 @@ public class ObjectForHeap {
         return distance;
     }
 
-    public void setIndexOfSquare(int indexOfSquare) {
-        this.indexOfSquare = indexOfSquare;
+    public void setIndexOfRoom(int indexOfRoom) {
+        this.indexOfRoom = indexOfRoom;
     }
 
     public void setPriority(int priority) {

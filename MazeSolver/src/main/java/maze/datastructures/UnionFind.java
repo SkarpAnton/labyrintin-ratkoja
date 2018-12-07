@@ -5,9 +5,9 @@ public class UnionFind {
     private final int[] trees;
     private int amountOfTrees;
 
-    public UnionFind(int amountOfSquares) {
-        this.amountOfTrees = amountOfSquares;
-        trees = new int[amountOfSquares];
+    public UnionFind(int amountOfRooms) {
+        this.amountOfTrees = amountOfRooms;
+        trees = new int[amountOfRooms];
         for (int i = 0; i < trees.length; i++) {
             trees[i] = -1;
         }

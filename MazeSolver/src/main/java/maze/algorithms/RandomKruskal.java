@@ -2,27 +2,33 @@ package maze.algorithms;
 
 import maze.datastructures.TypesOfSides;
 import maze.datastructures.Sides;
-import maze.datastructures.Square;
+import maze.datastructures.Room;
 import maze.datastructures.UnionFind;
 import java.util.Random;
 
 public class RandomKruskal {
 
-    private static Square[] maze;
-    private static int amountOfSquares;
+    private static Room[] maze;
+    private static int amountOfRooms;
 
     private RandomKruskal() {
     }
 
-    /*
-    * Creates maze based on random kruskal algorithm. Every new square has all 
-    * its sides as walls. Kruskal is used to create hallways that connect 
-    * every square by removing walls or equivalently adding hallways between squares. 
-    * After kruskal creates a spanning tree of hallways some hallways are added to 
-    * create more than one valid shortest path between squares.
-    * https://en.wikipedia.org/wiki/Maze_generation_algorithm
-    */
-    public static Square[] createMaze(int widthOfMaze) {
+   
+    /**
+     * <p>Creates maze based on random Kruskal algorithm. Every new room has all 
+     * its sides as walls. Kruskal is used to create hallways that connect 
+     * every room by removing walls or equivalently adding hallways between rooms. 
+     * After Kruskal creates a spanning tree of hallways some hallways are added to 
+     * create more than one valid shortest path between rooms.
+     * <a href="https://en.wikipedia.org/wiki/Maze_generation_algorithm"> 
+     * Randomized Kruskal wikipedia
+     * </a>
+     * <p>
+     * @param widthOfMaze
+     * @return Room[]
+     */
+    public static Room[] createMaze(int widthOfMaze) {
         initialization(widthOfMaze);
         createSpanningTree();
         createMoreHallways();
@@ -30,32 +36,32 @@ public class RandomKruskal {
     }
 
     private static void initialization(int widthOfMaze) {
-        amountOfSquares = widthOfMaze * widthOfMaze;
+        amountOfRooms = widthOfMaze * widthOfMaze;
 
-        maze = new Square[amountOfSquares];
-        for (int i = 0; i < amountOfSquares; i++) {
-            maze[i] = new Square(i, widthOfMaze);
+        maze = new Room[amountOfRooms];
+        for (int i = 0; i < amountOfRooms; i++) {
+            maze[i] = new Room(i, widthOfMaze);
 
         }
         //adds borders
         for (int i = 0; i < widthOfMaze; i++) {
             maze[i].setUpperSide(TypesOfSides.getBORDER());
-            maze[amountOfSquares - i - 1].setLowerSide(TypesOfSides.getBORDER());
+            maze[amountOfRooms - i - 1].setLowerSide(TypesOfSides.getBORDER());
             maze[i * widthOfMaze].setLeftSide(TypesOfSides.getBORDER());
-            maze[amountOfSquares - i * widthOfMaze - 1].setRightSide(TypesOfSides.getBORDER());
+            maze[amountOfRooms - i * widthOfMaze - 1].setRightSide(TypesOfSides.getBORDER());
         }
 
     }
 
     private static void createMoreHallways() {
         Random rand = new Random();
-        for (int i = 0; i < amountOfSquares / 3;) {
-            int randomSquare = rand.nextInt(amountOfSquares);
+        for (int i = 0; i < amountOfRooms / 3;) {
+            int randomRoom = rand.nextInt(amountOfRooms);
             int side = rand.nextInt(4);
-            int sideToTheNextSquare = Sides.getTypeOfSide(side, maze[randomSquare]);
-            int indexOfNextSquare = Sides.getIndexOfNextSquare(side, maze[randomSquare]);
-            if (sideToTheNextSquare == TypesOfSides.getWALL()) {
-                Sides.setAsHallway(side, maze[randomSquare], maze[indexOfNextSquare]);
+            int sideToTheNextRoom = Sides.getTypeOfSide(side, maze[randomRoom]);
+            int indexOfNextRoom = Sides.getIndexOfNextRoom(side, maze[randomRoom]);
+            if (sideToTheNextRoom == TypesOfSides.getWALL()) {
+                Sides.setAsHallway(side, maze[randomRoom], maze[indexOfNextRoom]);
                 i++;
             }
         }
@@ -63,18 +69,18 @@ public class RandomKruskal {
 
     private static void createSpanningTree() {
 
-        UnionFind tree = new UnionFind(amountOfSquares);
+        UnionFind tree = new UnionFind(amountOfRooms);
         Random rand = new Random();
         while (!tree.connectedTree()) {
 
-            int randomSquare = rand.nextInt(amountOfSquares);
+            int randomRoom = rand.nextInt(amountOfRooms);
             int side = rand.nextInt(4);
-            int sideToTheNextSquare = Sides.getTypeOfSide(side, maze[randomSquare]);
-            int indexOfNextSquare = Sides.getIndexOfNextSquare(side, maze[randomSquare]);
-            if (sideToTheNextSquare == TypesOfSides.getWALL()
-                    && tree.find(randomSquare) != tree.find(indexOfNextSquare)) {
-                Sides.setAsHallway(side, maze[randomSquare], maze[indexOfNextSquare]);
-                tree.union(tree.find(randomSquare), tree.find(indexOfNextSquare));
+            int sideToTheNextRoom = Sides.getTypeOfSide(side, maze[randomRoom]);
+            int indexOfNextRoom = Sides.getIndexOfNextRoom(side, maze[randomRoom]);
+            if (sideToTheNextRoom == TypesOfSides.getWALL()
+                    && tree.find(randomRoom) != tree.find(indexOfNextRoom)) {
+                Sides.setAsHallway(side, maze[randomRoom], maze[indexOfNextRoom]);
+                tree.union(tree.find(randomRoom), tree.find(indexOfNextRoom));
             }
         }
     }

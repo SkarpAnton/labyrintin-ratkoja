@@ -3,13 +3,13 @@ package maze.userinterface;
 import java.awt.*;
 import maze.controller.AlgorithmRunnerAndEvaluator;
 import maze.datastructures.MazeSize;
-import maze.datastructures.Square;
+import maze.datastructures.Room;
 import maze.datastructures.TypesOfSides;
 
 public class Drawer {
 
     private final MazeSize sizes;
-    private final Square[] maze;
+    private final Room[] maze;
 
     public Drawer(MazeSize sizes, int start, int destination) {
         this.sizes = sizes;
@@ -21,13 +21,13 @@ public class Drawer {
 
     public void drawWalls(Graphics graphics) {
         graphics.setColor(Color.WHITE);
-        int indexOfSquare = 0;
+        int indexOfRoom = 0;
         for (int j = 0; j < sizes.getMazeWidth(); j++) {
-            for (int i = 0; i < sizes.getMazeWidth(); i++, indexOfSquare++) {
-                drawUpperWall(graphics, i, j, indexOfSquare);
-                drawLowerWall(graphics, i, j, indexOfSquare);
-                drawLeftWall(graphics, i, j, indexOfSquare);
-                drawRightWall(graphics, i, j, indexOfSquare);
+            for (int i = 0; i < sizes.getMazeWidth(); i++, indexOfRoom++) {
+                drawUpperWall(graphics, i, j, indexOfRoom);
+                drawLowerWall(graphics, i, j, indexOfRoom);
+                drawLeftWall(graphics, i, j, indexOfRoom);
+                drawRightWall(graphics, i, j, indexOfRoom);
             }
         }
     }
@@ -36,31 +36,31 @@ public class Drawer {
     TODO
     There is a lot of repetition here, should think of a better way to write this 
     */
-    private void drawLowerWall(Graphics graphics, int x, int y, int indexOfSquare) {
-        if (maze[indexOfSquare].getLeftSide() != TypesOfSides.getHALLWAY()) {
-            graphics.drawLine(x * sizes.getSquareWidth(), y * sizes.getSquareWidth(),
-                    x * sizes.getSquareWidth(), (y + 1) * sizes.getSquareWidth());
+    private void drawLowerWall(Graphics graphics, int x, int y, int indexOfRoom) {
+        if (maze[indexOfRoom].getLeftSide() != TypesOfSides.getHALLWAY()) {
+            graphics.drawLine(x * sizes.getRoomWidth(), y * sizes.getRoomWidth(),
+                    x * sizes.getRoomWidth(), (y + 1) * sizes.getRoomWidth());
         }
     }
 
-    private void drawUpperWall(Graphics graphics, int x, int y, int indexOfSquare) {
-        if (maze[indexOfSquare].getUpperSide() != TypesOfSides.getHALLWAY()) {
-            graphics.drawLine(x * sizes.getSquareWidth(), y * sizes.getSquareWidth(),
-                    (x + 1) * sizes.getSquareWidth(), y * sizes.getSquareWidth());
+    private void drawUpperWall(Graphics graphics, int x, int y, int indexOfRoom) {
+        if (maze[indexOfRoom].getUpperSide() != TypesOfSides.getHALLWAY()) {
+            graphics.drawLine(x * sizes.getRoomWidth(), y * sizes.getRoomWidth(),
+                    (x + 1) * sizes.getRoomWidth(), y * sizes.getRoomWidth());
         }
     }
 
-    private void drawLeftWall(Graphics graphics, int x, int y, int indexOfSquare) {
-        if (maze[indexOfSquare].getLowerSide() != TypesOfSides.getHALLWAY()) {
-            graphics.drawLine(x * sizes.getSquareWidth(), (y + 1) * sizes.getSquareWidth(),
-                    (x + 1) * sizes.getSquareWidth(), (y + 1) * sizes.getSquareWidth());
+    private void drawLeftWall(Graphics graphics, int x, int y, int indexOfRoom) {
+        if (maze[indexOfRoom].getLowerSide() != TypesOfSides.getHALLWAY()) {
+            graphics.drawLine(x * sizes.getRoomWidth(), (y + 1) * sizes.getRoomWidth(),
+                    (x + 1) * sizes.getRoomWidth(), (y + 1) * sizes.getRoomWidth());
         }
     }
 
-    private void drawRightWall(Graphics graphics, int x, int y, int indexOfSquare) {
-        if (maze[indexOfSquare].getRightSide() != TypesOfSides.getHALLWAY()) {
-            graphics.drawLine((x + 1) * sizes.getSquareWidth(), y * sizes.getSquareWidth(),
-                    (x + 1) * sizes.getSquareWidth(), (y + 1) * sizes.getSquareWidth());
+    private void drawRightWall(Graphics graphics, int x, int y, int indexOfRoom) {
+        if (maze[indexOfRoom].getRightSide() != TypesOfSides.getHALLWAY()) {
+            graphics.drawLine((x + 1) * sizes.getRoomWidth(), y * sizes.getRoomWidth(),
+                    (x + 1) * sizes.getRoomWidth(), (y + 1) * sizes.getRoomWidth());
         }
     }
 
@@ -78,8 +78,8 @@ public class Drawer {
         int next = destination;
         while (next != start) {
             addMarkPath(graphics, next);
-            Square square = maze[next];
-            next = square.getAStarPrevious();
+            Room room = maze[next];
+            next = room.getAStarPrevious();
         }
     }
 
@@ -88,20 +88,20 @@ public class Drawer {
         int next = destination;
         while (next != start) {
             addMarkPath(graphics, next);
-            Square square = maze[next];
-            next = square.getBfsPrevious();
+            Room room = maze[next];
+            next = room.getBfsPrevious();
         }
     }
 
     private void addMarkPath(Graphics graphics, int index) {
-        graphics.fillRect(index % sizes.getMazeWidth() * sizes.getSquareWidth() + sizes.getSquareWidth() / 4,
-                index / sizes.getMazeWidth() * sizes.getSquareWidth() + sizes.getSquareWidth() / 4,
+        graphics.fillRect(index % sizes.getMazeWidth() * sizes.getRoomWidth() + sizes.getRoomWidth() / 4,
+                index / sizes.getMazeWidth() * sizes.getRoomWidth() + sizes.getRoomWidth() / 4,
                 sizes.getWidthOfPathMark(), sizes.getWidthOfPathMark());
     }
 
     public void drawVisited(Graphics graphics) {
         int notVisited = -1;
-        for (int i = 0; i < sizes.getAmountOfSquares(); i++) {
+        for (int i = 0; i < sizes.getAmountOfRooms(); i++) {
             graphics.setColor(Color.CYAN);
             if (maze[i].getAStarPrevious() != notVisited) {
                 addMarkVisited(graphics, i);
@@ -119,9 +119,9 @@ public class Drawer {
     }
 
     private void addMarkVisited(Graphics graphics, int index) {
-        graphics.fillRect(index % sizes.getMazeWidth() * sizes.getSquareWidth() + sizes.getSquareWidth() / 2,
-                index / sizes.getMazeWidth() * sizes.getSquareWidth() + sizes.getSquareWidth() / 2,
-                sizes.getSquareWidth() / 10 + 1, sizes.getSquareWidth() / 10 + 1);
+        graphics.fillRect(index % sizes.getMazeWidth() * sizes.getRoomWidth() + sizes.getRoomWidth() / 2,
+                index / sizes.getMazeWidth() * sizes.getRoomWidth() + sizes.getRoomWidth() / 2,
+                sizes.getRoomWidth() / 10 + 1, sizes.getRoomWidth() / 10 + 1);
     }
 
 }

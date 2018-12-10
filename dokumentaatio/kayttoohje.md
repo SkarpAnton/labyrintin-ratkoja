@@ -20,7 +20,7 @@ generoi hakemistoon _target_ suoritettavan jar-tiedoston _MazeSolver-1.0-SNAPSHO
 
 Jar:in voi suorittaa komennolla
 ```
-javac -jar target/MazeSolver-1.0-SNAPSHOT-shaded.jar
+java -jar target/MazeSolver-1.0-SNAPSHOT-shaded.jar
 ```
 ### Ohjelman parametrit
 

@@ -20,7 +20,7 @@ generoi hakemistoon _target_ suoritettavan jar-tiedoston _MazeSolver-1.0-SNAPSHO
 
 Jar:in voi suorittaa komennolla
 ```
-javac -jar target/MazeSolver-1.0-SNAPSHOT-shaded.jar
+java -jar target/MazeSolver-1.0-SNAPSHOT-shaded.jar
 ```
 ### Ohjelman parametrit
 
@@ -28,7 +28,7 @@ Ohjelmalla on kaksi parametria: labyrintin leveys ja ruudun leveys
 
 Esimerkiksi
 ```
-javac -jar target/MazeSolver-1.0-SNAPSHOT-shaded.jar 100 1000
+java -jar target/MazeSolver-1.0-SNAPSHOT-shaded.jar 100 1000
 ```
 loisi labyrintin, jossa yhdellä sivulla on huoneita 100 kpl ja kyseisestä labyrintista kuvan, jonka koko on 1000 * 1000 pikseliä.
 Vaihtoehtoisesti koot voi syottää suorituksen aikana.

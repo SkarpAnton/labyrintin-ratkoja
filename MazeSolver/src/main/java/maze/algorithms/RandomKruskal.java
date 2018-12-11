@@ -43,7 +43,6 @@ public class RandomKruskal {
             maze[i] = new Room(i, widthOfMaze);
 
         }
-        //adds borders
         for (int i = 0; i < widthOfMaze; i++) {
             maze[i].setUpperSide(TypesOfSides.getBORDER());
             maze[amountOfRooms - i - 1].setLowerSide(TypesOfSides.getBORDER());
@@ -55,7 +54,7 @@ public class RandomKruskal {
 
     private static void createMoreHallways() {
         Random rand = new Random();
-        for (int i = 0; i < amountOfRooms / 3;) {
+        for (int i = 0; i < amountOfRooms / 5;) {
             int randomRoom = rand.nextInt(amountOfRooms);
             int side = rand.nextInt(4);
             int sideToTheNextRoom = Sides.getTypeOfSide(side, maze[randomRoom]);

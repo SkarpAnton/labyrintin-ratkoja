@@ -20,7 +20,7 @@ public class Queue {
             tail = 0;
         }
     }
-
+    
     public int poll() {
         int first = queue[head];
         head++;
@@ -29,4 +29,5 @@ public class Queue {
         }
         return first;
     }
+
 }

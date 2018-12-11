@@ -112,7 +112,7 @@ public class SearchAlgorithms {
         }
     }
 
-    public static int relax(int current, int destination, int widthOfMaze, int distance) {
+    private static int relax(int current, int destination, int widthOfMaze, int distance) {
         int xDiff = Math.abs(destination % widthOfMaze - current % widthOfMaze);
         int yDiff = Math.abs(destination / widthOfMaze - current / widthOfMaze);
         return xDiff + yDiff + distance;

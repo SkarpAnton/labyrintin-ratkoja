@@ -4,6 +4,7 @@ import java.util.Scanner;
 import maze.datastructures.MazeSize;
 
 public class Input {
+    
     private static int widthOfMaze;
     private static int widthOfFrame;
     private static Scanner in;
@@ -56,7 +57,7 @@ public class Input {
                 System.out.print("Kuinka leveä labyrintti on: ");
                 widthOfMaze = Integer.parseInt(in.next());
                 System.out.println(widthOfMaze);
-                if (widthOfMaze < 6) {
+                if (widthOfMaze <= 5) {
                     throw new NumberFormatException();
                 }
                 break;
@@ -84,15 +85,15 @@ public class Input {
 
         while (true) {
             try {
-                System.out.println("Kuvan leveys täytyy olla kymmentä suurempi kokonaisluku.");
+                System.out.println("Kuvan leveys täytyy olla sataa suurempi kokonaisluku.");
                 System.out.print("Kuinka leveä kuva on: ");
                 widthOfFrame = Integer.parseInt(in.next());
-                if (widthOfFrame < 11) {
+                if (widthOfFrame <= 100) {
                     throw new NumberFormatException();
                 }
                 break;
             } catch (NumberFormatException e) {
-                System.out.println("Syötettu luku ei ole kymmentä suurempi kokonaisluku.");
+                System.out.println("Syötettu luku ei ole sataa suurempi kokonaisluku.");
             }
 
         }

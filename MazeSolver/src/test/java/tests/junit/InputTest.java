@@ -12,7 +12,7 @@ public class InputTest {
 
     @Before
     public void setUp() {
-        String input = "2\n10\n8\n16";
+        String input = "2\n10\n8\n150";
         InputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
     }
@@ -26,16 +26,16 @@ public class InputTest {
     @Test
     public void getWidthOfFrameStdTest() {
         int frameWidth = Input.getMazeSizes(new String[] {}).getFrameWidth();
-        assertEquals(16, frameWidth);
+        assertEquals(150, frameWidth);
     }
     @Test
     public void getWidthOfMazeCommandLineCorrectSizeTest() {
-        int mazeWidth = Input.getMazeSizes(new String[] {"10", "20"}).getMazeWidth();
+        int mazeWidth = Input.getMazeSizes(new String[] {"10", "120"}).getMazeWidth();
         assertEquals(10, mazeWidth);
     }
     @Test
     public void getWidthOfFrameCommandLineCorrectSizeTest() {
-        int frameWidth = Input.getMazeSizes(new String[] {"10", "20"}).getFrameWidth();
-        assertEquals(20, frameWidth);
+        int frameWidth = Input.getMazeSizes(new String[] {"10", "120"}).getFrameWidth();
+        assertEquals(120, frameWidth);
     }
 }

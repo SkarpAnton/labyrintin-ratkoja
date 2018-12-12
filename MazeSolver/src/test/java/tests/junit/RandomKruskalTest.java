@@ -20,8 +20,7 @@ public class RandomKruskalTest {
     
     @Test
     public void borderTest() {
-        for (int i = 0; i < mazeWidth; i++) {
-            
+        for (int i = 0; i < mazeWidth; i++) {            
             assertEquals(border, maze[i].getUpperSide());
             assertEquals(border, maze[amountOfRooms - i - 1].getLowerSide());
             assertEquals(border, maze[i * mazeWidth].getLeftSide());

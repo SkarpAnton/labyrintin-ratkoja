@@ -3,35 +3,35 @@
 ## Komentorivitoiminnot
 
 #### Alustus
-
-Komennot suoritetaan maven projektin juuresta.
-
-#### Suoritettavan jarin generointi
-
-Komento
-
-```
-mvn package
-```
-
-generoi hakemistoon _target_ suoritettavan jar-tiedoston _MazeSolver-1.0-SNAPSHOT-shaded.jar_
+Lataa suoritettava tiedosto [MazeSolver_v1-0.jar](https://github.com/SkarpAnton/labyrintin-ratkoja/releases)
 
 #### Jar:in suorittaminen
 
 Jar:in voi suorittaa komennolla
 ```
-java -jar target/MazeSolver-1.0-SNAPSHOT-shaded.jar
+java -jar MazeSolver_v1-0.jar
 ```
 #### Ohjelman parametrit
 
-Ohjelmalla on kaksi parametria: labyrintin leveys ja ruudun leveys  
+Ohjelmalla on kaksi parametria: labyrintin leveys ja huoneen leveys  
 
 Esimerkiksi
 ```
-java -jar target/MazeSolver-1.0-SNAPSHOT-shaded.jar 100 1000
+java -jar MazeSolver_v1-0.jar 100 1000
 ```
 loisi labyrintin, jossa yhdellä sivulla on huoneita 100 kpl ja kyseisestä labyrintista kuvan, jonka koko on 1000 * 1000 pikseliä.
 Vaihtoehtoisesti koot voi syottää suorituksen aikana.
+
+
+#### Suoritettavan jarin generointi
+
+Vaihtoehtoisesti voit luoda oman jar:in komennolla:
+
+```
+mvn package
+```
+
+Komento generoi hakemistoon _target_ suoritettavan jar-tiedoston _MazeSolver-1.0-SNAPSHOT-shaded.jar_
 
 #### Testaus
 

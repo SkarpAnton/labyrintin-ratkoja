@@ -35,6 +35,10 @@ Toteutin klassisen leveyshaun, mikä käytti jono tietorakennetta.
 
 Ohjelma muodostaa kuvan labyrintista, jonka huoneet on merkattu eri värisillä merkeillä. Sininen merkki merkkaa alkuhuonetta ja punainen määränpää huonetta. Vihreä merkki merkkaa huoneita, jotka ovat osa lyhintä polkua alkuhuoneen ja määränpään välillä, jonka A* tai leveyshaku löysi. Keltainen merkki kuvaa ruutua, jossa molemmat A* ja leveyshaku on käynyt. Magenta merkki kuvaa ruutua, jossa vain leveyshaku on käynyt, vastaavasti syaani kuvaa ruutuja, jossa vain A* on käynyt.
 
+## Parannettavaa
+
+Olisin voinut lähinnä tehdä enemmän asioita. Olisin voinut toteuttaa enemmän haku- ja labyrinbtin muodostus algoritmeja esim. labyrintin muodostuksen Prim:llä, syvyyshaun tai A* ei optimaalisilla heuristiikoilla.  UI voisi olla paljon edistyneempi, hakujen animointi, mitä joku kanssaopiskelija oli tehnykin, olisi kiinnostava idea.
+
 ## Lähteet
 
 Tietorakenteet ja algoritmit luentomateriaali, kevät 2018, Jyrki Kivinen

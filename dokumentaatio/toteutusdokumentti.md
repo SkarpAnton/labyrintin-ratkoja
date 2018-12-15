@@ -37,7 +37,7 @@ Ohjelma muodostaa kuvan labyrintista, jonka huoneet on merkattu eri värisillä 
 
 ## Parannettavaa
 
-Olisin voinut lähinnä tehdä enemmän asioita. Olisin voinut toteuttaa enemmän haku- ja labyrinbtin muodostus algoritmeja esim. labyrintin muodostuksen Prim:llä, syvyyshaun tai A* ei optimaalisilla heuristiikoilla.  UI voisi olla paljon edistyneempi, hakujen animointi, mitä joku kanssaopiskelija oli tehnykin, olisi kiinnostava idea.
+Olisin voinut lähinnä tehdä enemmän asioita. Olisin voinut toteuttaa enemmän haku- ja labyrintin muodostus algoritmeja esim. labyrintin muodostuksen Prim:llä, syvyyshaun tai A* ei optimaalisilla heuristiikoilla.  UI voisi olla paljon edistyneempi, hakujen animointi, mitä joku kanssaopiskelija oli tehnykin, olisi kiinnostava idea.
 
 ## Lähteet
 

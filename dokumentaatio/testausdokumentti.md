@@ -1,7 +1,14 @@
 # Testaus
 
+## Yksikkötestaus
 
-## Testikattavuus
+### Testit
+
+Yritin sanallisesti tekemiäni testejä, mutta melkein on vain helpompaa lukea alkuperäistä koodia, testien nimet ovat josaain määrin kuvaavia ja testit eivät ole kovin monimutkaisia. 
+
+Yksikkötestit löytyy: [testit](https://github.com/SkarpAnton/labyrintin-ratkoja/tree/master/MazeSolver/src/test/java/tests/junit)
+
+### Testikattavuus
 
 Testikattavuus alkaa olla aika hyvä algoritmien ja tietorakenteiden suhteen. En tehnyt automaattisia testejä UI:lle, vaikka varmasti hyvä olisi sellaisetkin toteuttaa. Olen tosin toki testannut UI:ta manuaalisesti.
 
@@ -26,9 +33,13 @@ A* on riippuvainen keon lisäys ja posto operaatioista. Toteutukseni toimenpitei
 ### Välineistö
 
 Testit ajettiin seuraavanlaisella koneella:
+
 Käyttöjärjestelmä: Windows 10 Home
+
 CPU: i5-4690k
+
 GPU: NVIDIA GeForce GTX 980
+
 Ram: 16 gb
 
 Taustalla oli luultavasti erinäisiä ohjelmia.

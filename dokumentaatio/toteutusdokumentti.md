@@ -9,6 +9,8 @@ käyttäjän syötteen perusteella.
 
 Labyrintin muodostin satunnaisella Kruskalin algoritmilla. Satunnainen Kruskalin algoritmi lisää satunnaisesti labyrintin käytäviä, jotka yhdistävät huoneet, joista ei ole polkua toisiinsa. Huoneiden yhteydet tarkistetaan Union-Find tietorakenteen avulla. Käytäviä lisätään, kunnes jokaisesta huoneesta on polku jokaiseen huoneeseen (verkko on yhtenäinen). Muokkasin lopuksi algoritmin muodostamaa labyrinttia poistamalla siitä seiniä, koska halusin, että puussa olisi useampi mahdollinen lyhin polku. 
 
+Kruskalin algoritmin toteutukseni oli siinä mielessä huono, että se saattaa valita tarkasteltavaksi saman kaaren useamman kertaa. Tein tosin version lokaalisti, joka ei valitsisi samaa kaarta useasti. Vaikka se oli keskimäärin kymmenen prosenttia nopeampi niin tulkitsin  kuitenkin aikaeron liian pieneksi verrattuna siihen kuinka paljon se pidensi koodia.
+
 ## Alku ja määränpää
 
 Arvoin alkuhuoneen ja määränpään satunnaisesti, tosin vaadin, että ruutujen euklidinen etäisyys toisistaan on ainakin labyrintin sivun mittainen. 
@@ -37,5 +39,5 @@ Ohjelma muodostaa kuvan labyrintista, jonka huoneet on merkattu eri värisillä 
 
 Tietorakenteet ja algoritmit luentomateriaali, kevät 2018, Jyrki Kivinen
 
-[Kruskalin algoritmi Wikipedia](https://en.wikipedia.org/wiki/Maze_generation_algorithm)
+[Satunnainen Kruskalin algoritmi Wikipedia](https://en.wikipedia.org/wiki/Maze_generation_algorithm)
 

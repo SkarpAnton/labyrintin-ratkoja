@@ -1,4 +1,4 @@
-package tests.junit;
+package tests.junit.algorithms;
 
 import maze.algorithms.SearchAlgorithms;
 import maze.datastructures.Room;

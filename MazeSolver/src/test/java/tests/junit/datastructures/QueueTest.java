@@ -1,5 +1,5 @@
 
-package tests.junit;
+package tests.junit.datastructures;
 
 import maze.datastructures.Queue;
 import org.junit.Before;

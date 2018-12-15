@@ -18,7 +18,7 @@ public class Printer {
         Drawer drawer = new Drawer(sizes, startAndDestination.getStart(),
                 startAndDestination.getDestination());
         JFrame frame = new JFrame("maze");
-        frame.setSize(sizes.getFrameWidth() + 20, sizes.getFrameWidth() + 50);
+        frame.setSize(sizes.getFrameWidth(), sizes.getFrameWidth());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Panel maze = new Panel(drawer, startAndDestination.getStart(),
                 startAndDestination.getDestination());

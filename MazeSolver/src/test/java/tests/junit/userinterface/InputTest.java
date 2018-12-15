@@ -1,4 +1,4 @@
-package tests.junit;
+package tests.junit.userinterface;
 
 
 

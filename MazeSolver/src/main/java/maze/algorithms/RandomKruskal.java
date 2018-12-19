@@ -21,11 +21,10 @@ public class RandomKruskal {
      * every room by removing walls or equivalently adding hallways between rooms. 
      * After Kruskal creates a spanning tree of hallways some hallways are added to 
      * create more than one valid shortest path between rooms.
-     * <a href="https://en.wikipedia.org/wiki/Maze_generation_algorithm"> 
+     * <a href="https://en.wikipedia.org/wiki/Maze_generation_algorithm#Randomized_Kruskal's_algorithm"> 
      * Randomized Kruskal wikipedia
      * </a>
      * <p>
-     * @param widthOfMaze
      * @return Room[]
      */
     public static Room[] createMaze(int widthOfMaze) {

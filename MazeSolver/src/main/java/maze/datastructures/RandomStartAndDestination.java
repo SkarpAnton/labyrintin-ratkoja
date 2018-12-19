@@ -11,6 +11,8 @@ public final class RandomStartAndDestination {
      * Selects random start and destination index. The distance between the corresponding rooms 
      * are at least the width of the maze based on the euclidian distance.
      * @param widthOfMaze 
+     *          Labyrinth has mazeWidth x mazeWidth rooms, thus mazeWidth is the
+     *          amount of rooms that this maze has on a row or column
      */
     public RandomStartAndDestination(int widthOfMaze) {
         int amountOfRooms = widthOfMaze * widthOfMaze;

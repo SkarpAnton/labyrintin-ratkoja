@@ -11,6 +11,7 @@ public class Printer {
     private Printer() {
     }
 
+
     public static void printMaze(MazeSize sizes) {
         
         RandomStartAndDestination startAndDestination
@@ -20,8 +21,7 @@ public class Printer {
         JFrame frame = new JFrame("maze");
         frame.setSize(sizes.getFrameWidth(), sizes.getFrameWidth());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Panel maze = new Panel(drawer, startAndDestination.getStart(),
-                startAndDestination.getDestination());
+        Panel maze = new Panel(drawer);
         JScrollPane scrollPane = new JScrollPane(maze);
         frame.add(scrollPane, BorderLayout.CENTER);
         frame.setResizable(false);

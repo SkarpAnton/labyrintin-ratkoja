@@ -7,13 +7,9 @@ import javax.swing.JPanel;
 class Panel extends JPanel {
 
     private final Drawer drawer;
-    private final int start;
-    private final int destination;
 
-    public Panel(Drawer drawer, int start, int destination) {
+    public Panel(Drawer drawer) {
         this.drawer = drawer;
-        this.start = start;
-        this.destination = destination;
     }
 
     @Override
@@ -21,7 +17,7 @@ class Panel extends JPanel {
         super.paintComponent(graphics);
         setBackground(Color.BLACK);
         drawer.drawWalls(graphics);
-        drawer.drawPaths(graphics, start, destination);
+        drawer.drawPaths(graphics);
         drawer.drawVisited(graphics);
     }
 }

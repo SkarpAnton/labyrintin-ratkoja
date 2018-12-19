@@ -6,19 +6,35 @@ import maze.datastructures.MazeSize;
 import maze.datastructures.Room;
 import maze.datastructures.TypesOfSides;
 
+/**
+ * Used to draw the maze
+ */
 public class Drawer {
 
     private final MazeSize sizes;
     private final Room[] maze;
+    private final int start;
+    private final int destination;
 
+    /**
+
+     * @param start index of the room where the searches were started
+     * @param destination index of the room that the algorithms looked for
+     */
     public Drawer(MazeSize sizes, int start, int destination) {
         this.sizes = sizes;
+        this.start = start;
+        this.destination = destination;
         AlgorithmRunnerAndEvaluator runnerAndEvaluator = new AlgorithmRunnerAndEvaluator(sizes,
                 start, destination);
         maze = runnerAndEvaluator.runAndEvaluateAlgorithms();
 
     }
 
+    /**
+     * Draws walls of the maze. Walls are white lines at the edge of the room. 
+     * Walls are drawn based on the rooms sides type.
+     */
     public void drawWalls(Graphics graphics) {
         graphics.setColor(Color.WHITE);
         int indexOfRoom = 0;
@@ -32,10 +48,7 @@ public class Drawer {
         }
     }
     
-    /*
-    TODO
-    There is a lot of repetition here, should think of a better way to write this 
-    */
+  
     private void drawLowerWall(Graphics graphics, int x, int y, int indexOfRoom) {
         if (maze[indexOfRoom].getLeftSide() != TypesOfSides.getHALLWAY()) {
             graphics.drawLine(x * sizes.getRoomWidth(), y * sizes.getRoomWidth(),
@@ -64,34 +77,35 @@ public class Drawer {
         }
     }
 
-    public void drawPaths(Graphics graphics, int start, int destination) {
-        drawAstarsPath(graphics, start, destination);
-        drawBfsPath(graphics, start, destination);
+    /**
+     * Adds marks to rooms that are part of the path from start to destination that A* and BFS found. 
+     * Path is drawn with color green. Starting
+     * room is colored with color blue and destination with color red.
+     */
+    public void drawPaths(Graphics graphics) {
+        drawPath(graphics, true);
+        drawPath(graphics, false);
         graphics.setColor(Color.BLUE);
         addMarkPath(graphics, start);
         graphics.setColor(Color.RED);
         addMarkPath(graphics, destination);
     }
 
-    private void drawAstarsPath(Graphics graphics, int start, int destination) {
+    private void drawPath(Graphics graphics, Boolean isBfs) {
         graphics.setColor(Color.GREEN);
         int next = destination;
         while (next != start) {
             addMarkPath(graphics, next);
             Room room = maze[next];
-            next = room.getAStarPrevious();
+            if (isBfs) {
+                next = room.getBfsPrevious();
+            } else {
+                next = room.getAStarPrevious();
+            }
+            
         }
     }
 
-    private void drawBfsPath(Graphics graphics, int start, int destination) {
-        graphics.setColor(Color.GREEN);
-        int next = destination;
-        while (next != start) {
-            addMarkPath(graphics, next);
-            Room room = maze[next];
-            next = room.getBfsPrevious();
-        }
-    }
 
     private void addMarkPath(Graphics graphics, int index) {
         graphics.fillRect(index % sizes.getMazeWidth() * sizes.getRoomWidth() + sizes.getRoomWidth() / 4,
@@ -99,6 +113,12 @@ public class Drawer {
                 sizes.getWidthOfPathMark(), sizes.getWidthOfPathMark());
     }
 
+    /**
+     * Adds colored marks to rooms that A* and BFS visited. 
+     * Rooms that A* only visited is colored cyan,
+     * rooms that BFS only visited is colored magenta and if both algorithms
+     * visited a room it is colored orange.
+     */
     public void drawVisited(Graphics graphics) {
         int notVisited = -1;
         for (int i = 0; i < sizes.getAmountOfRooms(); i++) {

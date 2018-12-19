@@ -13,6 +13,11 @@ public class AlgorithmRunnerAndEvaluator {
     private final int start;
     private final int destination;
 
+    /**
+     *
+     * @param start index of the room where the searches are started
+     * @param destination index of the room that the algorithms are looking for
+     */
     public AlgorithmRunnerAndEvaluator(MazeSize sizes, int start, int destination) {
         this.sizes = sizes;
         this.start = start;
@@ -20,9 +25,9 @@ public class AlgorithmRunnerAndEvaluator {
     }
 
     /**
-     * Runs and times the labyrinth creation by randomized Kruskal, also runs and times
+     * Runs and times the maze creation by randomized Kruskal, also runs and times
      * shortest path finding by BFS and A*.
-     * @return 
+     * @return the created maze
      */
     public Room[] runAndEvaluateAlgorithms() {
         runAndEvaluateRandomKruskal();

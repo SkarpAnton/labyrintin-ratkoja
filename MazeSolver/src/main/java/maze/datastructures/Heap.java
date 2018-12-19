@@ -1,15 +1,29 @@
 package maze.datastructures;
 
+/**
+ * Heap uses array for its heap implementation,
+ * 
+ * Heap uses specialized object called ObjectForHeap. Later user can generalize the heap if
+ * need be, it should be rather easy.
+ */
 public class Heap {
 
     private final ObjectForHeap[] heap;
     private int size = -1;
     
-    
+    /**
+     * 
+     * @param sizeOfHeap Size of the array used in this heap implementation.  
+     *   The size is the maximum size of the heap.
+     */
     public Heap(int sizeOfHeap) {
         this.heap = new ObjectForHeap[sizeOfHeap / 2];
     }
     
+    /**
+     *
+     * @param object object to be added to the heap
+     */
     public void add(ObjectForHeap object) {
         size++;    
         int index = size;
@@ -20,6 +34,10 @@ public class Heap {
         heap[index] = object;
     }
 
+    /**
+     * Gets and removes the first object in heap
+     * @return first object in heap. 
+     */
     public ObjectForHeap poll() {
         ObjectForHeap min = heap[0];
         heap[0] = heap[size];

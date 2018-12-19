@@ -1,7 +1,6 @@
 package tests.junit.userinterface;
 
 
-
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import maze.userinterface.Input;

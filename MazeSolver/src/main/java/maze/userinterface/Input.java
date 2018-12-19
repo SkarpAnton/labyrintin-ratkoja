@@ -11,6 +11,12 @@ public class Input {
     private Input() {
     }
     
+    /**
+     * Gets maze sizes from user input. User inputs mazes width in rooms and 
+     * the with of the picture in pixels
+     * @param args parameters that were given in the command line to the program
+     * @return sizes about the maze
+     */
     public static MazeSize getMazeSizes(String[] args) {
         in = new Scanner(System.in);
         return new MazeSize(getWidthOfMaze(args), getWidthOfFrame(args));
@@ -56,7 +62,6 @@ public class Input {
                 System.out.println("Labyrintin leveys täytyy olla viittä suurempi kokonaisluku.");
                 System.out.print("Kuinka leveä labyrintti on: ");
                 widthOfMaze = Integer.parseInt(in.next());
-                System.out.println(widthOfMaze);
                 if (widthOfMaze <= 5) {
                     throw new NumberFormatException();
                 }
@@ -74,7 +79,7 @@ public class Input {
             } catch (NumberFormatException e) {
                 return false;
             }
-            if (widthOfFrame > 10) {
+            if (widthOfFrame > 100) {
                 return true;
             }
         }
@@ -88,7 +93,7 @@ public class Input {
                 System.out.println("Kuvan leveys täytyy olla sataa suurempi kokonaisluku.");
                 System.out.print("Kuinka leveä kuva on: ");
                 widthOfFrame = Integer.parseInt(in.next());
-                if (widthOfFrame <= 100) {
+                if (widthOfFrame < 100) {
                     throw new NumberFormatException();
                 }
                 break;

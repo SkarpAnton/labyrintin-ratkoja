@@ -16,16 +16,19 @@ public class SearchAlgorithms {
     private SearchAlgorithms() {};
     
     /**
-     * <p> Uses breadth-first search to find the shortest path between starting
+     * Uses breadth-first search to find the shortest path between starting
      * room and the destination room. 
      * <a href="https://en.wikipedia.org/wiki/Breadth-first_search">
      * BFS wikipedia
      * </a>
-     * </p>
-     * @param start
-     * @param destination
+     * 
+     * @param start index of the room where the search is started
+     * @param destination index of the room that the algorithm is looking for
      * @param maze
+     *          array of rooms
      * @param widthOfMaze 
+     *          Labyrinth has mazeWidth x mazeWidth rooms, thus mazeWidth is the
+     *          amount of rooms that this maze has on a row or column
      */
     public static void breadthFirstSearch(int start, int destination,
             Room[] maze, int widthOfMaze) {
@@ -70,10 +73,13 @@ public class SearchAlgorithms {
      * A* wikipedia
      * </a>
      * </p>
-     * @param start
-     * @param destination
+     * @param start index of the room where the search is started
+     * @param destination index of the room that the algorithm is looking for
      * @param maze
+     *          array of rooms
      * @param widthOfMaze 
+     *          Labyrinth has mazeWidth x mazeWidth rooms, thus mazeWidth is the
+     *          amount of rooms that this maze has on a row or column
      */
     public static void aStar(int start, int destination, Room[] maze, int widthOfMaze) {
         minHeap = new Heap(widthOfMaze * widthOfMaze);

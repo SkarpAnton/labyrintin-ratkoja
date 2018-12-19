@@ -1,8 +1,11 @@
 package maze.datastructures;
 
+/**
+ * Contains data about a given room in the maze
+ */
 public class Room {
     
-    private final int index;
+    private final int roomIndex;
     private final int lowerRoomIndex;
     private final int upperRoomIndex;
     private final int rightRoomIndex;
@@ -15,13 +18,18 @@ public class Room {
     private int aStarPrevious = -1;
     private double bestPriority = 100000000;
 
-
-    public Room(int index, int widthOfMaze) {
-        this.index = index;
-        lowerRoomIndex = index + widthOfMaze;
-        upperRoomIndex = index - widthOfMaze;
-        rightRoomIndex = index + 1;
-        leftRoomIndex = index - 1;
+    /**
+     *
+     * @param widthOfMaze
+     *          Labyrinth has mazeWidth x mazeWidth rooms, thus mazeWidth is the
+     *          amount of rooms that this maze has on a row or column
+     */
+    public Room(int roomIndex, int widthOfMaze) {
+        this.roomIndex = roomIndex;
+        lowerRoomIndex = roomIndex + widthOfMaze;
+        upperRoomIndex = roomIndex - widthOfMaze;
+        rightRoomIndex = roomIndex + 1;
+        leftRoomIndex = roomIndex - 1;
     }
     
 
@@ -82,7 +90,7 @@ public class Room {
     }
 
     public int getIndex() {
-        return index;
+        return roomIndex;
     }
 
     public int getLowerRoomIndex() {

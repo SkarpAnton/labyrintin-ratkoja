@@ -4,7 +4,7 @@
 
 ### Alustus
 
-Lataa suoritettava tiedosto [MazeSolver_v1-0.jar](https://github.com/SkarpAnton/labyrintin-ratkoja/releases)
+Lataa suoritettava tiedosto [MazeSolver_v1-1.jar](https://github.com/SkarpAnton/labyrintin-ratkoja/releases/tag/v1.1)
 
 Lisäksi eräät komennot olettavat, että olet ladannut koko projektin. 
 

@@ -4,7 +4,7 @@
 
 ### Testit
 
-Yritin sanallisesti tekemiäni testejä, mutta melkein on vain helpompaa lukea alkuperäistä koodia, testien nimet ovat josaain määrin kuvaavia ja testit eivät ole kovin monimutkaisia. 
+Yritin sanallisesti kuvailla tekemiäni testejä, mutta melkein on vain helpompaa lukea alkuperäistä koodia, testien nimet ovat josaain määrin kuvaavia ja testit eivät ole kovin monimutkaisia. 
 
 Yksikkötestit löytyy: [testit](https://github.com/SkarpAnton/labyrintin-ratkoja/tree/master/MazeSolver/src/test/java/tests/junit)
 
@@ -47,7 +47,7 @@ Taustalla oli luultavasti erinäisiä ohjelmia.
 ### Testien suoritus
 
 
-Algoritmeja testatiin eri huone määrillä. Huoneiden määrät määräytyivät huoneiden leveyden kautta. Huoneiden leveydet alkoivat sadasta ja loppuivat 3900 ja mittauksia otettiin 100 intervalleilla, täten huoneiden määrä on välillä [100, 15120000]. Jokaisella huone määrällä algoritmeja ajettin kymmenen kertaa, joista jokainen mitattiin yksilöllisesti. Ajoista otettiin keskiarvo, joita sitten käytin vertailussa. Ajat mitattiin sekunneissa.
+Algoritmeja testatiin eri huone määrillä. Huoneiden määrät määräytyivät labyurintin sivulla olevien huoneiden määrän kautta. Huoneiden määrät sivulla alkoivat sadasta ja loppuivat 3900 ja mittauksia otettiin 100 intervalleilla, täten huoneiden määrä on välillä [10000, 15120000]. Jokaisella huone määrällä algoritmeja ajettin kymmenen kertaa, joista jokainen mitattiin yksilöllisesti. Ajoista otettiin keskiarvo, joita sitten käytin vertailussa. Ajat mitattiin sekunneissa.
 
 Mittasin lisäksi vertalukohdaksi triviaalit O(n), O(nlogn) ja O(n^2) algoritmit.
 
@@ -84,7 +84,7 @@ Aikaero tulee selvästi siitä, että A* käy yksinkertaisesti vähemmässä mä
 
 ![Kruskal](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/Kruskal.png)
 
-Kruskalin toteutukseni näyttäisi olevan suhteellisen hidas. Algoritmi on merkittävästi hitaampi, kuin triviaali O(nlon) algoritmi. 
+Kruskalin toteutukseni näyttäisi olevan suhteellisen hidas. Algoritmi on merkittävästi hitaampi, kuin triviaali O(nlogn) algoritmi. 
 
 #### Kruskal vs A* vs leveyshaku
 
@@ -99,7 +99,11 @@ Kruskalin algoritmi on selvästi ohjelmani pullonkaula.
 Vaikka Kruskal vaikuttaa hitaalta niin on se silti merkittävästi tehokkaampi, kuin O(n^2) algoritmi. Huone määrä on testissä paljon pienempi, koska testien suorittaminen alkoi kestää liian kauan suuremilla huone määrillä.
 
 
+## Lähteet
 
+Tietorakenteet ja algoritmit luentomateriaali, kevät 2018, Jyrki Kivinen
+
+[Satunnainen Kruskalin algoritmi Wikipedia](https://en.wikipedia.org/wiki/Maze_generation_algorithm#Randomized_Kruskal's_algorithm)
 
 
 

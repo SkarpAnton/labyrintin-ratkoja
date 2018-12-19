@@ -4,7 +4,7 @@ Vertailee A* ja leveyshaun aikavaativuutta satunnaisten labyrinttien ratkaisussa
 
 ## Dokumentaatio
 
-[Dokumentaatio](https://github.com/SkarpAnton/labyrintin-ratkoja/tree/master/dokumentaatio)
+[Kaikki dokumentaatio](https://github.com/SkarpAnton/labyrintin-ratkoja/tree/master/dokumentaatio)
 
 [Alkuperäinen määrittelydokumentti](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/maarittelydokumentti.md)
 
@@ -13,4 +13,6 @@ Vertailee A* ja leveyshaun aikavaativuutta satunnaisten labyrinttien ratkaisussa
 [Testausdokumentti](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/testausdokumentti.md)
 
 [Käyttöohje](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kayttoohje.md)
+
+[Viikkoraportit](https://github.com/SkarpAnton/labyrintin-ratkoja/tree/master/dokumentaatio/viikkoraportit)
 

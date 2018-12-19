@@ -13,7 +13,7 @@ Kruskalin algoritmin toteutukseni oli siinä mielessä huono, että se saattaa v
 
 ## Alku ja määränpää
 
-Arvoin alkuhuoneen ja määränpään satunnaisesti, tosin vaadin, että ruutujen euklidinen etäisyys toisistaan on ainakin labyrintin sivun mittainen. 
+Valitsin alkuhuoneen ja määränpään satunnaisesti, tosin vaadin, että ruutujen euklidinen etäisyys toisistaan on ainakin labyrintin sivun mittainen. 
 
 ## A*
 

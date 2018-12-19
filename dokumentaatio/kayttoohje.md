@@ -2,8 +2,11 @@
 
 ## Komentorivitoiminnot
 
-#### Alustus
+### Alustus
+
 Lataa suoritettava tiedosto [MazeSolver_v1-0.jar](https://github.com/SkarpAnton/labyrintin-ratkoja/releases)
+
+Lisäksi eräät komennot olettavat, että olet ladannut koko projektin. 
 
 #### Jar:in suorittaminen
 
@@ -13,15 +16,19 @@ java -jar MazeSolver_v1-0.jar
 ```
 #### Ohjelman parametrit
 
-Ohjelmalla on kaksi parametria: labyrintin leveys ja huoneen leveys  
+Ohjelmalla on kaksi parametria: huoneiden määrä labyrintin sivulla ja muodostetun kuvan pikselien määrä sivulla
 
 Esimerkiksi
 ```
 java -jar MazeSolver_v1-0.jar 100 1000
 ```
-loisi labyrintin, jossa yhdellä sivulla on huoneita 100 kpl ja kyseisestä labyrintista kuvan, jonka koko on 1000 * 1000 pikseliä.
+loisi 100x100 huoneisen labyrintin, ja kyseisestä labyrintista kuvan, jonka koko on 1000x1000 pikseliä.
 Vaihtoehtoisesti koot voi syottää suorituksen aikana.
 
+Ensimmäisen parameterin, eli huoneiden määrän sivulla pitää olla viittä suurempi kokonaisluku. Toisen parametrin, eli pikselien määrän sivulla, pitää olla sataa suurempi kokonaisluku.
+
+### Huomautus
+Seuraavat komennot olettavat, että olet maven projektin juuressa
 
 #### Suoritettavan jarin generointi
 

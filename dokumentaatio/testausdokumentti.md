@@ -17,7 +17,7 @@ Testikattavuus alkaa olla aika hyvä algoritmien ja tietorakenteiden suhteen. En
 
 ## Teoreettiset aikavaativuudet
 
-Wikipedian mukaan satunnaisen Kruskalin algoritmin aikavaativuudeksi voitaisiin saavuttaa O(5 * mahdollisten seinien määrä) = O(20 * huoneiden määrä) = O(huoneiden määrä), mutta Union-Find implementaationi ei käyttänyt 'path compression:ia', joten todellinen teoreettinen aikavaativuus algoritmille on O(nlogn), mikä on sama kuin tira:n luentomat1200eriaalissa todettu arvo Kruskalin aikavaativuudelle.
+Wikipedian mukaan satunnaisen Kruskalin algoritmin aikavaativuudeksi voitaisiin saavuttaa O(5 * mahdollisten seinien määrä) = O(20 * huoneiden määrä) = O(huoneiden määrä), mutta Union-Find implementaationi ei käyttänyt 'path compression:ia', joten todellinen teoreettinen aikavaativuus algoritmille on O(nlogn), mikä on sama kuin tira:n luentomateriaalissa todettu arvo Kruskalin aikavaativuudelle.
 
 Leveyshaun aikavaativuus on tunnetusti O(|V| + |E|) eli tässä tilanteessa O(huoneiden määrä + käytävien määrä) <= O(huoneiden määrä + 4 * huoneiden määrä) = O(huoneiden määrä). Leveyshaun implementaationi on aika klassinen, joten aikavaativuus luultavasti pätee. 
 
@@ -47,7 +47,7 @@ Taustalla oli luultavasti erinäisiä ohjelmia.
 ### Testien suoritus
 
 
-Algoritmeja testatiin eri huone määrillä. Huoneiden määrät määräytyivät labyurintin sivulla olevien huoneiden määrän kautta. Huoneiden määrät sivulla alkoivat sadasta ja loppuivat 3900 ja mittauksia otettiin 100 intervalleilla, täten huoneiden määrä on välillä [10000, 15120000]. Jokaisella huone määrällä algoritmeja ajettin kymmenen kertaa, joista jokainen mitattiin yksilöllisesti. Ajoista otettiin keskiarvo, joita sitten käytin vertailussa. Ajat mitattiin sekunneissa.
+Algoritmeja testatiin eri huone määrillä. Huoneiden määrät määräytyivät labyrintin sivulla olevien huoneiden määrän kautta. Huoneiden määrät sivulla alkoivat sadasta ja loppuivat 3900 ja mittauksia otettiin 100 intervalleilla, täten huoneiden määrä on välillä [10000, 15120000]. Jokaisella huone määrällä algoritmeja ajettin kymmenen kertaa, joista jokainen mitattiin yksilöllisesti. Ajoista otettiin keskiarvo, joita sitten käytin vertailussa. Ajat mitattiin sekunneissa.
 
 Mittasin lisäksi vertalukohdaksi triviaalit O(n), O(nlogn) ja O(n^2) algoritmit.
 
@@ -104,6 +104,8 @@ Vaikka Kruskal vaikuttaa hitaalta niin on se silti merkittävästi tehokkaampi, 
 Tietorakenteet ja algoritmit luentomateriaali, kevät 2018, Jyrki Kivinen
 
 [Satunnainen Kruskalin algoritmi Wikipedia](https://en.wikipedia.org/wiki/Maze_generation_algorithm#Randomized_Kruskal's_algorithm)
+
+Graafit tehtiin [plot.ly](https://plot.ly/create/) avulla
 
 
 

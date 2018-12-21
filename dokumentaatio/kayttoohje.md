@@ -90,4 +90,4 @@ A* harvoin vierailee ruuduissa, joissa leveyshaku ei vieraile, joten syaania nä
 
 ## Lähteet
 
-Paljolti kopioitu ohjelmistotekniikan esimerkki projektista
+Komennot ohjelmistotekniikan esimerkki projektista

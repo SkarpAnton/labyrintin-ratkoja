@@ -12,7 +12,7 @@ Lisäksi eräät komennot olettavat, että olet ladannut koko projektin.
 
 Jar:in voi suorittaa komennolla
 ```
-java -jar MazeSolver_v1-0.jar
+java -jar MazeSolver_v1-1.jar
 ```
 #### Ohjelman parametrit
 
@@ -32,7 +32,7 @@ Seuraavat komennot olettavat, että olet maven projektin juuressa
 
 #### Suoritettavan jarin generointi
 
-Vaihtoehtoisesti voit luoda oman jar:in komennolla:
+Voit luoda oman jar:in komennolla:
 
 ```
 mvn package

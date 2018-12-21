@@ -1,19 +1,35 @@
 # Testaus
 
-## Yksikkötestaus
+### Yksikkö- ja integraatiotestaus
 
-### Testit
+#### Logiikka
 
-Yritin sanallisesti kuvailla tekemiäni testejä, mutta melkein on vain helpompaa lukea alkuperäistä koodia, testien nimet ovat josaain määrin kuvaavia ja testit eivät ole kovin monimutkaisia. 
+Yritin sanallisesti kuvailla tekemiäni testien rakennetta, mutta melkein on vain helpompaa lukea alkuperäistä koodia, testien nimet ovat josaain määrin kuvaavia ja testit eivät ole kovin monimutkaisia. 
 
 Yksikkötestit löytyy: [testit](https://github.com/SkarpAnton/labyrintin-ratkoja/tree/master/MazeSolver/src/test/java/tests/junit)
 
-### Testikattavuus
+#### Käyttöjliittymä
 
-Testikattavuus alkaa olla aika hyvä algoritmien ja tietorakenteiden suhteen. En tehnyt automaattisia testejä UI:lle, vaikka varmasti hyvä olisi sellaisetkin toteuttaa. Olen tosin toki testannut UI:ta manuaalisesti.
+En tehnyt automaattisia testejä käyttöliittymälle, vaikka varmasti hyvä olisi sellaisetkin toteuttaa.
+
+#### Testikattavuus
+
+Jos käyttöliittymää ei huomioi niin testikattavuus on hyvä. Rivikattavuus on 97% ja haaraumakattavuus on 100%.  
 
 ![Testikattavuus](https://github.com/SkarpAnton/labyrintin-ratkoja/blob/master/dokumentaatio/kuvat/Testikattavuus.png)
 
+### Järjestelmätestaus
+
+Toteutetettu manuaalisesti
+
+#### Asennus ja konfigurointi
+
+Sovellus ei sisällä oikeastaan konfigurointia, jar:in pitäisi sisältää kaikki tarvittava tieto. Tietokannan on testattu toimivan ladatulla jar tiedostolla.
+
+#### Käyttäjien syöte
+
+Syötteet tarkistetaan ohjelmassa ja olen testannut syöttää vääriä syötteitä.
+Käyttäjän syötettä käytetään ohjelmassa hyvin vähän, syötteitä käytetään vain huoneiden määrän ja kuvan koon valintaan, joten tarkastus oli helppoa.
 
 ## Teoreettiset aikavaativuudet
 
